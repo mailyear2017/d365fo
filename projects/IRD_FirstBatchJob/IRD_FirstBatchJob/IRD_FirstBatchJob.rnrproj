@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>ird</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{43c680f2-deda-45f5-94bc-75f67f4c353d}</ProjectGuid>
+    <Name>IRD_FirstBatchJob</Name>
+    <RootNamespace>IRD_FirstBatchJob</RootNamespace>
+    <StartupType>Class</StartupType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Action Menu Items\" />
+    <Folder Include="Base Enums\" />
+    <Folder Include="Classes\" />
+    <Folder Include="EDT Enums\" />
+    <Folder Include="Label Files\" />
+    <Folder Include="Menus\" />
+    <Folder Include="Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxClass\Ird_CustHoldService">
+      <SubType>Content</SubType>
+      <Name>Ird_CustHoldService</Name>
+      <Link>Classes\Ird_CustHoldService</Link>
+    </Content>
+    <Content Include="AxClass\Ird_CustOnHoldContract">
+      <SubType>Content</SubType>
+      <Name>Ird_CustOnHoldContract</Name>
+      <Link>Classes\Ird_CustOnHoldContract</Link>
+    </Content>
+    <Content Include="AxClass\Ird_CustOnHoldController">
+      <SubType>Content</SubType>
+      <Name>Ird_CustOnHoldController</Name>
+      <Link>Classes\Ird_CustOnHoldController</Link>
+    </Content>
+    <Content Include="AxEnum\ProcStatus">
+      <SubType>Content</SubType>
+      <Name>ProcStatus</Name>
+      <Link>Base Enums\ProcStatus</Link>
+    </Content>
+    <Content Include="AxLabelFile\ird_labels_en-US">
+      <SubType>Content</SubType>
+      <Name>ird_labels_en-US</Name>
+      <Link>Label Files\ird_labels_en-US</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\CustOnHoldIntf">
+      <SubType>Content</SubType>
+      <Name>CustOnHoldIntf</Name>
+      <Link>Action Menu Items\CustOnHoldIntf</Link>
+    </Content>
+    <Content Include="AxMenu\Conferences">
+      <SubType>Content</SubType>
+      <Name>Conferences</Name>
+      <Link>Menus\Conferences</Link>
+    </Content>
+    <Content Include="AxTable\IRD_CustHoldTable">
+      <SubType>Content</SubType>
+      <Name>IRD_CustHoldTable</Name>
+      <Link>Tables\IRD_CustHoldTable</Link>
+    </Content>
+    <Content Include="ird_labels.en-US.label.txt">
+      <SubType>Content</SubType>
+      <Name>ird_labels.en-US.label.txt</Name>
+      <DependentUpon>AxLabelFile\ird_labels_en-US</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>

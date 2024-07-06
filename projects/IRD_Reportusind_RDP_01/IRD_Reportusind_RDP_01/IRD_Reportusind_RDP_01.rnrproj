@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>ird</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{18db9620-a125-4692-a294-6cc88c3165d4}</ProjectGuid>
+    <Name>IRD_Reportusind_RDP_01</Name>
+    <RootNamespace>IRD_Reportusind_RDP_01</RootNamespace>
+    <StartupType>Class</StartupType>
+    <StartupObject>TestSpeakerRDP</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Label Files\" />
+    <Folder Include="Menus\" />
+    <Folder Include="Output Menu Items\" />
+    <Folder Include="Reports\" />
+    <Folder Include="Simple Queries\" />
+    <Folder Include="Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxClass\SpeakerDataContract">
+      <SubType>Content</SubType>
+      <Name>SpeakerDataContract</Name>
+      <Link>Classes\SpeakerDataContract</Link>
+    </Content>
+    <Content Include="AxClass\SpeakerDP">
+      <SubType>Content</SubType>
+      <Name>SpeakerDP</Name>
+      <Link>Classes\SpeakerDP</Link>
+    </Content>
+    <Content Include="AxClass\TestSpeakerRDP">
+      <SubType>Content</SubType>
+      <Name>TestSpeakerRDP</Name>
+      <Link>Classes\TestSpeakerRDP</Link>
+    </Content>
+    <Content Include="AxLabelFile\ird_labels_en-US">
+      <SubType>Content</SubType>
+      <Name>ird_labels_en-US</Name>
+      <Link>Label Files\ird_labels_en-US</Link>
+    </Content>
+    <Content Include="AxMenuItemOutput\SpeakerReportRDP">
+      <SubType>Content</SubType>
+      <Name>SpeakerReportRDP</Name>
+      <Link>Output Menu Items\SpeakerReportRDP</Link>
+    </Content>
+    <Content Include="AxMenu\Conferences">
+      <SubType>Content</SubType>
+      <Name>Conferences</Name>
+      <Link>Menus\Conferences</Link>
+    </Content>
+    <Content Include="AxQuery\SpeakerQuery">
+      <SubType>Content</SubType>
+      <Name>SpeakerQuery</Name>
+      <Link>Simple Queries\SpeakerQuery</Link>
+    </Content>
+    <Content Include="AxReport\SpeakerRDP">
+      <SubType>Content</SubType>
+      <Name>SpeakerRDP</Name>
+      <Link>Reports\SpeakerRDP</Link>
+    </Content>
+    <Content Include="AxTable\TmpSpeakerTable">
+      <SubType>Content</SubType>
+      <Name>TmpSpeakerTable</Name>
+      <Link>Tables\TmpSpeakerTable</Link>
+    </Content>
+    <Content Include="ird_labels.en-US.label.txt">
+      <SubType>Content</SubType>
+      <Name>ird_labels.en-US.label.txt</Name>
+      <DependentUpon>AxLabelFile\ird_labels_en-US</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Diagnostics
+  GenerationTime="2024-06-03T09:58:35.547825+10:00">
+  <Items>
+    <Diagnostic>
+      <DiagnosticType>Generation</DiagnosticType>
+      <Severity>Informational</Severity>
+      <Path>dynamics://View/Speaker</Path>
+      <ElementType>View</ElementType>
+      <Moniker>IsRuntimeServicesMode</Moniker>
+      <Line>0</Line>
+      <Column>0</Column>
+      <Message>Is Runtime Services mode: False</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>ExternalReference</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Reference/Microsoft.Dynamics.Commerce.Runtime.Services.PricingEngine</Path>
+      <Moniker>AssemblyFileNotFound</Moniker>
+      <Message>Assembly 'Microsoft.Dynamics.Commerce.Runtime.Entities.AttributeBasedPricing, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' failed to load because it was not found.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>ExternalReference</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Reference/Azure.Core</Path>
+      <Moniker>AssemblyFileNotFound</Moniker>
+      <Message>Assembly 'System.Memory.Data, Version=1.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51' failed to load because it was not found.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/IrdSalesConfBusEventContract/Method/initialize</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>ProtectedMethodNotAllowedInFinalClass</Moniker>
+      <Line>1</Line>
+      <Column>1</Column>
+      <EndLine>2</EndLine>
+      <EndColumn>79</EndColumn>
+      <Message>New protected method 'IrdSalesConfBusEventContract.initialize()' declared in a final class.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/Ird_CustHoldService/Method/process</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>ImplicitConversionFromDateToUtcDateTime</Moniker>
+      <Line>10</Line>
+      <Column>53</Column>
+      <EndLine>10</EndLine>
+      <EndColumn>77</EndColumn>
+      <Message>The implicit conversion from date to utcDateTime is not supported.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/Ird_CustHoldService/Method/process</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>ImplicitConversionFromDateToUtcDateTime</Moniker>
+      <Line>11</Line>
+      <Column>51</Column>
+      <EndLine>11</EndLine>
+      <EndColumn>73</EndColumn>
+      <Message>The implicit conversion from date to utcDateTime is not supported.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/IrdSalesConfBusEventContract/Method/initialize</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>CastFromExtensibleEnum</Moniker>
+      <Line>40</Line>
+      <Column>58</Column>
+      <EndLine>40</EndLine>
+      <EndColumn>81</EndColumn>
+      <Message>Cast from extensible enum 'Extensible Enumeration(SalesStatus)' to 'int' potentially harmful and deprecated.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/TestSpeakerRDP/Method/main</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>CastFromExtensibleEnum</Moniker>
+      <Line>15</Line>
+      <Column>9</Column>
+      <EndLine>15</EndLine>
+      <EndColumn>42</EndColumn>
+      <Message>Cast from extensible enum 'Extensible Enumeration(SpeakerStatus)' to 'int' potentially harmful and deprecated.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/TestSpeakerRDP/Method/main</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>ExtensibleEnumInComparisonAgainstNumericalValue</Moniker>
+      <Line>20</Line>
+      <Column>31</Column>
+      <EndLine>20</EndLine>
+      <EndColumn>60</EndColumn>
+      <Message>Comparing a numerical value with extensible enum 'Extensible Enumeration(SpeakerStatus)' will yield unexpected results. Extensible enum values are not deterministically assigned to a numerical value.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/PopulateDataToTables/Method/main</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>ExtensibleEnumInNumericalAssignment</Moniker>
+      <Line>28</Line>
+      <Column>21</Column>
+      <EndLine>28</EndLine>
+      <EndColumn>51</EndColumn>
+      <Message>Assigning a numerical value to extensible enum 'Extensible Enumeration(SpeakerStatus)' will yield unexpected results. Extensible enum values are not deterministically assigned to a numerical value.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Metadata</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>AxDataEntityViewExtension/EntAssetMaintenanceAssetV3Entity.ird_ext/Relations/ParentAsset/RelatedDataEntity</Path>
+      <Moniker>ReferencedObjectIsObsolete</Moniker>
+      <Message>Referenced object 'EntAssetMaintenanceAssetV2Entity' is marked as obsolete. </Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Metadata</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>AxDataEntityView/EntAssetMaintenanceAssetV3Entity/Metadata/EntAssetObjectTable/DataSources/ParentAssetTable/Relations/ObjectTableParent/ObjectTableParent/RelationshipType</Path>
+      <Moniker>InvalidProperty</Moniker>
+      <Message>Link is not allowed; the only allowed values are Association, Aggregation or Composition for the data source EntAssetObjectTable table EntAssetObjectTable relation ObjectTableParent relationship type..</Message>
+    </Diagnostic>
+  </Items>
+  <Aliases />
+</Diagnostics>

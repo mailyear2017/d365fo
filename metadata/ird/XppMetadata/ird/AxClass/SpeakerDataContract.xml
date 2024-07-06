@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<z:anyType xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxCompilerMetadata" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+	<IsPublic>true</IsPublic>
+	<Attributes>
+		<AxAttribute>
+			<Name>DataContractAttribute</Name>
+			<Parameters />
+		</AxAttribute>
+	</Attributes>
+	<Implements xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+		<d2p1:string>SysOperationValidatable</d2p1:string>
+	</Implements>
+	<Members>
+		<AxClassMemberVariable>
+			<Type>Enum</Type>
+			<TypeName>SpeakerStatus</TypeName>
+			<Name>speakerStatus</Name>
+			<Attributes />
+		</AxClassMemberVariable>
+	</Members>
+	<Methods>
+		<Method>
+			<Name>parmSpeakerStatus</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>DataMemberAttribute</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"Status"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Enum</Type>
+					<TypeName>SpeakerStatus</TypeName>
+					<DefaultValue>speakerStatus</DefaultValue>
+					<Name>_speakerStatus</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Enum</Type>
+				<TypeName>SpeakerStatus</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>validate</Name>
+			<Visibility>Public</Visibility>
+			<ReturnType>
+				<Type>Enum</Type>
+				<TypeName>boolean</TypeName>
+			</ReturnType>
+			<Variables>
+				<AxMethodVariable>
+					<Type>Enum</Type>
+					<TypeName>boolean</TypeName>
+					<Name>isvalid</Name>
+				</AxMethodVariable>
+			</Variables>
+		</Method>
+	</Methods>
+</z:anyType>

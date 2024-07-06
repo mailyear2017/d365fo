@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxEnum xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>SpeakerStatus</Name>
+	<UseEnumValue>No</UseEnumValue>
+	<EnumValues>
+		<AxEnumValue>
+			<Name>Active</Name>
+			<Label>@ird_labels:Ird02</Label>
+		</AxEnumValue>
+		<AxEnumValue>
+			<Name>Inactive</Name>
+			<Label>@ird_labels:Ird03</Label>
+			<Value>1</Value>
+		</AxEnumValue>
+	</EnumValues>
+	<IsExtensible>true</IsExtensible>
+</AxEnum>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Ird_CustHoldService</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class Ird_CustHoldService extends SysOperationServiceBase
+{
+       }
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>process</Name>
+				<Source><![CDATA[
+    public void process(Ird_CustOnHoldContract _contract)
+    {
+        Info("Starting the process method inside the service class");
+
+        if(_contract.parmDebug()==NoYes::Yes)
+        {
+            Info("parameters passes are:");
+            Info("From date:" + DateTimeUtil::toStr(_contract.parmFromdate()));
+            Info("To date:" + DateTimeUtil::toStr(_contract.parmTodate()));
+        }
+        Query   query;
+        QueryRun    qr;
+        CustTable   custTable;
+        int         recordcount=0;
+        
+        IRD_CustHoldTable   interfacetable;
+
+        //clear the table
+        this.clearInterface();
+        //get the data for the interface
+
+        ttsbegin;
+        
+
+           while select custTable
+            where custTable.ModifiedDateTime >=Global::clrSystemDateTime2UtcDateTime(_contract.parmFromdate())
+            && custTable.ModifiedDateTime <Global::clrSystemDateTime2UtcDateTime(_contract.parmTodate())
+            &&custTable.Blocked==CustVendorBlocked::All
+           {
+               interfacetable.CustAccount=custTable.AccountNum;
+               interfacetable.CustBlocked=custTable.Blocked;
+               interfacetable.ProcStatus=ProcStatus::New;
+               interfacetable.insert();
+            recordcount+=1;
+           }
+          ttscommit;
+        Info("Interface data processing complete :" + int2Str(recordcount));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>clearInterface</Name>
+				<Source><![CDATA[
+    private void clearInterface()
+    {
+        IRD_CustHoldTable interfacetable;
+        ttsbegin;
+        Info("Clear interface ");
+            interfacetable.clear();
+        ttscommit;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

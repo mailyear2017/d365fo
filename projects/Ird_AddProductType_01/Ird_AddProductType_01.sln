@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_AddProductType_01 (USR) [ird]", "Ird_AddProductType_01\Ird_AddProductType_01.rnrproj", "{6194C66C-EBE7-4B3F-AA92-5FE804B97D20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6194C66C-EBE7-4B3F-AA92-5FE804B97D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6194C66C-EBE7-4B3F-AA92-5FE804B97D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75587773-5FDC-4EB1-83C0-EDCE046ADB34}
+	EndGlobalSection
+EndGlobal

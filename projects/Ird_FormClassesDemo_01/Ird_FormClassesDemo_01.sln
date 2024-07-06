@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_FormClassesDemo_01 (USR) [ird]", "Ird_FormClassesDemo_01\Ird_FormClassesDemo_01.rnrproj", "{CF970336-ED3D-48A9-983A-42F13BD9C3F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF970336-ED3D-48A9-983A-42F13BD9C3F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF970336-ED3D-48A9-983A-42F13BD9C3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECE08C16-C3B4-4371-9960-903250422962}
+	EndGlobalSection
+EndGlobal

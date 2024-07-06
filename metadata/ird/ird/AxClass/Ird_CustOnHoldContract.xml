@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Ird_CustOnHoldContract</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[DataContractAttribute]
+internal final class Ird_CustOnHoldContract
+{
+    date fromdate, todate;
+    NoYes debug;
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>parmFromdate</Name>
+				<Source><![CDATA[
+    [Datamember, SysOperationLabel("From Date"), SysOperationDisplayOrder("1")]
+    public date parmFromdate(date _fromdate = fromdate)
+    {
+        fromdate=_fromdate;
+
+        return(FromDate);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>parmTodate</Name>
+				<Source><![CDATA[
+    [Datamember, SysOperationLabel("To Date"), SysOperationDisplayOrder("2")]
+    public date parmTodate(date _todate = todate)
+    {
+        todate=_todate;
+
+        return(todate);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>parmDebug</Name>
+				<Source><![CDATA[
+    [Datamember, SysOperationLabel("Debug"), SysOperationDisplayOrder("3")]
+    public NoYes parmDebug(NoYes _debug = debug)
+    {
+        debug=_debug;
+
+        return(debug);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

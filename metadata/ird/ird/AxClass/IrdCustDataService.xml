@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdCustDataService</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public class IrdCustDataService
+{ 
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>Create</Name>
+				<Source><![CDATA[
+    public  IrdCustDataResponse Create(IrdCustDataRequest   _request)
+    {
+        var response = new IrdCustDataResponse();
+        CustTable   custTable = CustTable::find(_request.parmCustAccountNum());
+        DirPartyTable   dirpartyTable;
+        //TransDate   _fromdate=dateNull();
+        //TransDate   _todate =dateMax();
+        //TransDate   _assessmentdate = dateNull();
+        //CurrencyCodeBase _currencycode = CompanyInfoHelper::standardCurrency();
+
+        try
+        {
+            response.parmAccountName(dirpartyTable::getName(custTable.Party));
+            response.parmCustOpenBal(custTable.openBalanceCur());
+            if (response.parmAccountName()!="")
+            {
+                response.parmSuccess(true);
+            }
+            else
+            {
+                throw Exception::CLRError;
+            }
+        }
+            catch  (Exception::CLRError)
+        {
+            System.Exception interopException = CLRInterop::getLastException();
+
+            response.parmErrorMessage(interopException.ToString());
+            response.parmSuccess(false);
+        }
+        return  response;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

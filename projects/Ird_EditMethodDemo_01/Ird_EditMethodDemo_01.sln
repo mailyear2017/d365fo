@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_EditMethodDemo_01 (USR) [ird]", "Ird_EditMethodDemo_01\Ird_EditMethodDemo_01.rnrproj", "{65AB07C8-586A-4F83-BBF0-D956E476D274}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65AB07C8-586A-4F83-BBF0-D956E476D274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65AB07C8-586A-4F83-BBF0-D956E476D274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7959588-C4D6-4F76-B17C-BEC3646B5A74}
+	EndGlobalSection
+EndGlobal

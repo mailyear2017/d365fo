@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Irdcoc01_Extension</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+/// this class demonstrates the chain of command
+/// </summary>
+[ExtensionOf(classStr(Ircoc01))]
+final class Irdcoc01_Extension
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>dosomething</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// this is the method which is the extension 
+    /// </summary>
+    /// <param name = "c"> actual argument</param>
+    /// <returns> returned by the method</returns>
+    public str dosomething(str c)
+    {
+       
+        c= next dosomething(c);
+       
+        c=c+ "Replaced";
+        Info(c);
+        return c;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args args)
+    {
+        ircoc01 cc  = new ircoc01();
+        
+
+        cc.dosomething("main");
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

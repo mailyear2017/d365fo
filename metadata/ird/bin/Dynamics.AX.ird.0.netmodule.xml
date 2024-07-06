@@ -1,0 +1,12 @@
+<EventHandlers>
+  <BusinessEventHandlers>
+    <EventHandler delegateElementName="NumberSeqGlobal" delegateElementTypeId="ClassTypeId" delegateMethodName="buildModulesMapDelegate" eventHandlerElementName="IrdPurchReqIDNumSeq" eventHandlerElementTypeId="ClassTypeId" eventHandlerMethodName="buildModulesMapSubscriber" delegateTypeId="DelegateTypeId" />
+  </BusinessEventHandlers>
+  <DataEventHandlers>
+    <DataEventHandler tableName="awm_pricelists" dataEventType="Inserting" eventHandlerElementName="IrdTableEventHandlerClass" eventHandlerElementTypeId="ClassTypeId" eventHandlerMethodName="awm_pricelists_onInserting" />
+  </DataEventHandlers>
+  <FormEventHandlers />
+  <FormControlEventHandlers />
+  <FormDataSourceEventHandler />
+  <FormDataFieldEventHandler />
+</EventHandlers>

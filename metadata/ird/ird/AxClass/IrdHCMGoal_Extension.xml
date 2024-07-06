@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdHCMGoal_Extension</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[ExtensionOf(formDataSourceStr(HcmGoal,HcmGoal))]
+internal final class IrdHCMGoal_Extension
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>GoalDisplay</Name>
+				<Source><![CDATA[
+    public display str GoalDisplay()
+    {
+        HcmGoal         hcmgoalrec;
+        FormDataSource  fds = this.formRun().dataSource(formDataSourceStr(HcmGoal,HcmGoal));
+        hcmgoalrec = fds.cursor();
+
+        return "-"+hcmgoalrec.Description;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

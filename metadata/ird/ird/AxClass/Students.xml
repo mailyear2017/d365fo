@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Students</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public final class Students
+{
+    str name = "John";
+    int age =10;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public void main(Args _args)
+    {
+        info("inside student main");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>parmName</Name>
+				<Source><![CDATA[
+    public str parmName()
+    {
+        return(name);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>parmAge</Name>
+				<Source><![CDATA[
+    public int parmAge()
+    {
+        return(age);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

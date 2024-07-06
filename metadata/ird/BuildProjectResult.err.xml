@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Diagnostics
+  GenerationTime="2024-06-03T09:41:34.1493793+10:00">
+  <Items>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Class/IrdGetDimValues/Method/main</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>IllegalToken</Moniker>
+      <Line>14</Line>
+      <Column>16</Column>
+      <EndLine>14</EndLine>
+      <EndColumn>22</EndColumn>
+      <Message>Invalid token 'select'.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Class/IrdGetDimValues/Method/main</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>ExpectedToken</Moniker>
+      <Line>20</Line>
+      <Column>80</Column>
+      <EndLine>20</EndLine>
+      <EndColumn>81</EndColumn>
+      <Message>')' expected.</Message>
+    </Diagnostic>
+  </Items>
+  <Aliases />
+</Diagnostics>

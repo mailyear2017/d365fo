@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>CustTable_CustGroupModIRD_Extension</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+/// This extendion of cust table modified method on cust group field
+/// </summary>
+[ExtensionOf(formDataFieldStr(CustTable,CustTable,CustGroup))]
+final class CustTable_CustGroupModIRD_Extension
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>modified</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// This is the main mdofied extension
+    /// </summary>
+    public void modified()
+    {
+        FormDataObject  formdataobject = any2Object(this) as formdataobject;
+        //FormRun fr  = new FormRun();
+        //FormControl     formcontrol =any2Object(this) as FormControl;
+        FormDataSource  CustTableDS =   formdataobject.datasource();
+        //FormStringControl fsc= CustTableDS.formRun().design().controlName("CustGroup");
+
+     
+
+        CustTable   custtable;
+    
+
+        next modified();
+
+        custtable=CustTableDS.cursor();
+
+        if(custtable.CustGroup=="30")
+        {
+            if(custtable.InvoiceAccount=="")
+            {
+                //fsc.mandatory(true);
+                CustTableDS.object(fieldNum(CustTable, InvoiceAccount)).mandatory(true);
+                
+                checkFailed("Invoice account must be populated when the cust group is " + custtable.CustGroup);
+            }
+            
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

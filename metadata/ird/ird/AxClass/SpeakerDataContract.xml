@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>SpeakerDataContract</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[DataContractAttribute]
+//internal final class SpeakerDataContract
+public class SpeakerDataContract implements SysOperationValidatable
+{
+    SpeakerStatus   speakerStatus;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>parmSpeakerStatus</Name>
+				<Source><![CDATA[
+    [DataMemberAttribute("Status")]
+public SpeakerStatus parmSpeakerStatus(SpeakerStatus _speakerStatus = speakerStatus)
+    {
+        speakerStatus = _speakerStatus;
+        return speakerStatus;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>validate</Name>
+				<Source><![CDATA[
+    public boolean validate()
+    {
+        boolean isvalid = true;
+
+        if((speakerStatus==SpeakerStatus::Active) | (speakerStatus==SpeakerStatus::Inactive ))
+        {
+            isvalid = true;
+        }else
+       {
+            isvalid=checkFailed(strFmt("Enter a value for the parameter"));
+        }
+        return isvalid;
+            
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

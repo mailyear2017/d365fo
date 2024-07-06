@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "ird_ConfSpeakersDM_01 (USR) [ird]", "ird_ConfSpeakersDM_01\ird_ConfSpeakersDM_01.rnrproj", "{277DA09C-DC06-4746-82CF-6E96F9464468}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{277DA09C-DC06-4746-82CF-6E96F9464468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277DA09C-DC06-4746-82CF-6E96F9464468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE6C8351-F211-472D-BE52-7DB6EFCE81EA}
+	EndGlobalSection
+EndGlobal

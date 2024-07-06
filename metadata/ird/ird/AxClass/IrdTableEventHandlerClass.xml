@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdTableEventHandlerClass</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+/// event handler class wrapper
+/// </summary>
+internal final class IrdTableEventHandlerClass
+{
+    
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>awm_pricelists_onInserting</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///actual method
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    [DataEventHandler(tableStr(awm_pricelists), DataEventType::Inserting)]
+    public static void awm_pricelists_onInserting(Common sender, DataEventArgs e)
+    {
+        awm_pricelists  pricelistsobj   =   sender  as awm_pricelists;
+
+        Info(strFmt("parms : %1, %2", pricelistsobj.PriceListName, "Test"));
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

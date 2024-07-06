@@ -1,0 +1,16 @@
+==================================
+Generation Information: View dynamics://View/Speaker: Is Runtime Services mode: False
+ExternalReference Warning: dynamics://Reference/Microsoft.Dynamics.Commerce.Runtime.Services.PricingEngine: Assembly 'Microsoft.Dynamics.Commerce.Runtime.Entities.AttributeBasedPricing, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' failed to load because it was not found.
+ExternalReference Warning: dynamics://Reference/Azure.Core: Assembly 'System.Memory.Data, Version=1.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51' failed to load because it was not found.
+Compile Warning: Class Method dynamics://Class/IrdSalesConfBusEventContract/Method/initialize: [(1,1),(2,79)]: New protected method 'IrdSalesConfBusEventContract.initialize()' declared in a final class.
+Compile Warning: Class Method dynamics://Class/Ird_CustHoldService/Method/process: [(10,53),(10,77)]: The implicit conversion from date to utcDateTime is not supported.
+Compile Warning: Class Method dynamics://Class/Ird_CustHoldService/Method/process: [(11,51),(11,73)]: The implicit conversion from date to utcDateTime is not supported.
+Compile Warning: Class Method dynamics://Class/IrdSalesConfBusEventContract/Method/initialize: [(40,58),(40,81)]: Cast from extensible enum 'Extensible Enumeration(SalesStatus)' to 'int' potentially harmful and deprecated.
+Compile Warning: Class Method dynamics://Class/TestSpeakerRDP/Method/main: [(15,9),(15,42)]: Cast from extensible enum 'Extensible Enumeration(SpeakerStatus)' to 'int' potentially harmful and deprecated.
+Compile Warning: Class Method dynamics://Class/TestSpeakerRDP/Method/main: [(20,31),(20,60)]: Comparing a numerical value with extensible enum 'Extensible Enumeration(SpeakerStatus)' will yield unexpected results. Extensible enum values are not deterministically assigned to a numerical value.
+Compile Warning: Class Method dynamics://Class/PopulateDataToTables/Method/main: [(28,21),(28,51)]: Assigning a numerical value to extensible enum 'Extensible Enumeration(SpeakerStatus)' will yield unexpected results. Extensible enum values are not deterministically assigned to a numerical value.
+Metadata Warning: AxDataEntityViewExtension/EntAssetMaintenanceAssetV3Entity.ird_ext/Relations/ParentAsset/RelatedDataEntity: Referenced object 'EntAssetMaintenanceAssetV2Entity' is marked as obsolete. 
+Metadata Warning: AxDataEntityView/EntAssetMaintenanceAssetV3Entity/Metadata/EntAssetObjectTable/DataSources/ParentAssetTable/Relations/ObjectTableParent/ObjectTableParent/RelationshipType: Link is not allowed; the only allowed values are Association, Aggregation or Composition for the data source EntAssetObjectTable table EntAssetObjectTable relation ObjectTableParent relationship type..
+==================================
+Errors: 0
+Warnings: 11

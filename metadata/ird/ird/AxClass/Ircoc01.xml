@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Ircoc01</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+/// This is main class for the COC demo
+/// </summary>
+public class Ircoc01
+{
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>dosomething</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// This is the method which will be used for demo
+    /// </summary>
+    /// <param name = "arg"> arguments that are used</param>
+    /// <returns> arg </returns>
+    public str dosomething(str arg)
+    {
+        Info(arg);
+        return arg;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

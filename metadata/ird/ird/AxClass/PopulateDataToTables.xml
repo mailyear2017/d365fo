@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>PopulateDataToTables</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public final class PopulateDataToTables
+{
+    /// <summary>
+    /// Class entry point. The system will call this method when a designated menu 
+    /// is selected or when execution starts and this class is set as the startup class.
+    /// </summary>
+    /// <param name = "_args">The specified arguments.</param>
+    /// 
+
+    
+    
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args _args)
+    {
+        ird_speaker ird_Speaker;
+        //ird_speakerspecialization   specialization;
+        int NumOfRecords=10;
+        int iter=0;
+
+        while (iter < NumOfRecords)
+            {
+            ttsbegin;
+                    iter+=1;
+                
+                    ird_Speaker.FirstName="Moh " + int2Str(iter);
+                    ird_Speaker.LastName = "Ahmed" + int2Str(iter);
+                    ird_Speaker.Email   = ird_Speaker.FirstName+"."+ird_Speaker.LastName+"@gmail.com";
+                    ird_Speaker.SpeakerStatus = 0;
+            ird_Speaker.insert();
+            ttscommit;
+                    Info("count:" + int2Str(NumOfRecords));
+            }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

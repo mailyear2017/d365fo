@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxMenu xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V1">
+	<Name>Conferences</Name>
+	<Label>@ird_labels:Ird11</Label>
+	<MenuItemName>Specializations_MenuItem</MenuItemName>
+	<Elements>
+		<AxMenuElement xmlns=""
+			i:type="AxMenuElementSubMenu">
+			<Name>Transactions</Name>
+			<Label>@ird_labels:IrdTrx</Label>
+			<Elements>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>IrdSimpleReqMI</Name>
+					<MenuItemName>IrdPurchReq</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>IrdSalesOrders</Name>
+					<MenuItemName>IrdSalesFormMI</MenuItemName>
+				</AxMenuElement>
+			</Elements>
+		</AxMenuElement>
+		<AxMenuElement xmlns=""
+			i:type="AxMenuElementSubMenu">
+			<Name>PeriodicTasks</Name>
+			<Label>@SYS76406</Label>
+			<Elements>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>IrdCustOnHoldINtf</Name>
+					<MenuItemName>CustOnHoldIntf</MenuItemName>
+					<MenuItemType>Action</MenuItemType>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>entWOLifeCycleUpdate</Name>
+					<MenuItemName>IrdWOStatusUpdateMI</MenuItemName>
+					<MenuItemType>Action</MenuItemType>
+				</AxMenuElement>
+			</Elements>
+		</AxMenuElement>
+		<AxMenuElement xmlns=""
+			i:type="AxMenuElementSubMenu">
+			<Name>Reports</Name>
+			<Label>@ird_labels:Ird17</Label>
+			<Elements>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>SpeakerListingReport</Name>
+					<MenuItemName>SpeakerListingMI</MenuItemName>
+					<MenuItemType>Output</MenuItemType>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>SpeakerListingRDP</Name>
+					<MenuItemName>SpeakerReportRDP</MenuItemName>
+					<MenuItemType>Output</MenuItemType>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>CallToQuery</Name>
+					<MenuItemName>IrdGenreicQueryMenuItem</MenuItemName>
+					<MenuItemType>Action</MenuItemType>
+				</AxMenuElement>
+			</Elements>
+		</AxMenuElement>
+		<AxMenuElement xmlns=""
+			i:type="AxMenuElementSeparator">
+			<Name>IRD_Transactions</Name>
+		</AxMenuElement>
+		<AxMenuElement xmlns=""
+			i:type="AxMenuElementSubMenu">
+			<Name>Setup</Name>
+			<Label>@Res:Setup</Label>
+			<Elements>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>Speakers</Name>
+					<MenuItemName>SpeakersMI</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>spcecializations</Name>
+					<MenuItemName>Specializations_MenuItem</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>IrdPurchType</Name>
+					<MenuItemName>IrdPurchTypeMI</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>DefinePriceLists</Name>
+					<MenuItemName>PriceListFormMI</MenuItemName>
+				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>Ird_AssetStructure</Name>
+					<MenuItemName>Ird_AssetStructure</MenuItemName>
+				</AxMenuElement>
+			</Elements>
+		</AxMenuElement>
+	</Elements>
+</AxMenu>

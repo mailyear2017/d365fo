@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdSalesConfirmJournalPost_Extension</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[ExtensionOf(classStr(SalesConfirmJournalPost))]
+internal final class IrdSalesConfirmJournalPost_Extension
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>endPost</Name>
+				<Source><![CDATA[
+    protected   void    endPost()
+    {
+        next    endPost();
+
+        //IrdSalesConfBuinessEvent::newFromSalesTable(salesTable).send();
+
+        IrdSalesConfBusinessEvent::newFromSalestable(salesTable).send();
+        
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

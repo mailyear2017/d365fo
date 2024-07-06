@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34407.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_dependentLOV_01 (USR) [ird]", "Ird_dependentLOV_01\Ird_dependentLOV_01.rnrproj", "{DEB8B736-F56C-4770-B074-755A0855D643}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEB8B736-F56C-4770-B074-755A0855D643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEB8B736-F56C-4770-B074-755A0855D643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0F47BEE-386E-45EA-82C9-CD35E52C0D21}
+	EndGlobalSection
+EndGlobal

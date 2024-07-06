@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33927.289
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "IRD_WOStatusUpdateJob (USR) [ird]", "IRD_WOStatusUpdateJob\IRD_WOStatusUpdateJob.rnrproj", "{656FF21F-F474-42A1-83A1-C36C67BB0003}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{656FF21F-F474-42A1-83A1-C36C67BB0003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{656FF21F-F474-42A1-83A1-C36C67BB0003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F384E1F-68D2-47B1-ACA8-CD45641FF947}
+	EndGlobalSection
+EndGlobal

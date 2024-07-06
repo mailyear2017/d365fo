@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<z:anyType xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxCompilerMetadata" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+	<IsFinal>true</IsFinal>
+	<IsInternal>true</IsInternal>
+	<Attributes>
+		<AxAttribute>
+			<Name>DataContractAttribute</Name>
+			<Parameters />
+		</AxAttribute>
+	</Attributes>
+	<Members>
+		<AxClassMemberVariable>
+			<Type>ExtendedDataType</Type>
+			<TypeName>EntAssetWorkOrderLifecycleStateRecId</TypeName>
+			<Name>fromstatus</Name>
+			<Attributes />
+		</AxClassMemberVariable>
+		<AxClassMemberVariable>
+			<Type>ExtendedDataType</Type>
+			<TypeName>EntAssetWorkOrderLifecycleStateRecId</TypeName>
+			<Name>tostatus</Name>
+			<Attributes />
+		</AxClassMemberVariable>
+		<AxClassMemberVariable>
+			<Type>ExtendedDataType</Type>
+			<TypeName>EntAssetWorkOrderID</TypeName>
+			<Name>fromworkorderid</Name>
+			<Attributes />
+		</AxClassMemberVariable>
+		<AxClassMemberVariable>
+			<Type>ExtendedDataType</Type>
+			<TypeName>EntAssetWorkOrderID</TypeName>
+			<Name>toworkorderid</Name>
+			<Attributes />
+		</AxClassMemberVariable>
+	</Members>
+	<Methods>
+		<Method>
+			<Name>ParmFromWorkOrderId</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>DataMember</Name>
+					<Parameters />
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationLabel</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"From Work Order"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationDisplayOrder</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"1"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>ExtendedDataType</Type>
+					<TypeName>EntAssetWorkOrderID</TypeName>
+					<DefaultValue>fromworkorderid</DefaultValue>
+					<Name>_fromworkorderid</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>ExtendedDataType</Type>
+				<TypeName>EntAssetWorkOrderID</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>ParmToWorkOrderId</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>DataMember</Name>
+					<Parameters />
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationLabel</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"To Work Order"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationDisplayOrder</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"2"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>ExtendedDataType</Type>
+					<TypeName>EntAssetWorkOrderID</TypeName>
+					<DefaultValue>toworkorderid</DefaultValue>
+					<Name>_toworkorderid</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>ExtendedDataType</Type>
+				<TypeName>EntAssetWorkOrderID</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>ParmFromStatus</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>DataMember</Name>
+					<Parameters />
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationLabel</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"From LifeCyle State"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationDisplayOrder</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"3"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>ExtendedDataType</Type>
+					<TypeName>EntAssetWorkOrderLifecycleStateRecId</TypeName>
+					<DefaultValue>fromstatus</DefaultValue>
+					<Name>_fromstatus</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>ExtendedDataType</Type>
+				<TypeName>EntAssetWorkOrderLifecycleStateRecId</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>ParmToStatus</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>DataMember</Name>
+					<Parameters />
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationLabel</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"To LifeCycleState"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationDisplayOrder</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"4"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>ExtendedDataType</Type>
+					<TypeName>EntAssetWorkOrderLifecycleStateRecId</TypeName>
+					<DefaultValue>tostatus</DefaultValue>
+					<Name>_tostatus</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>ExtendedDataType</Type>
+				<TypeName>EntAssetWorkOrderLifecycleStateRecId</TypeName>
+			</ReturnType>
+		</Method>
+	</Methods>
+</z:anyType>

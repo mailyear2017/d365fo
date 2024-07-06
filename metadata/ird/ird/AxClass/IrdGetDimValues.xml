@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdGetDimValues</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class IrdGetDimValues
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Class entry point. The system will call this method when a designated menu 
+    /// is selected or when execution starts and this class is set as the startup class.
+    /// </summary>
+    /// <param name = "_args">The specified arguments.</param>
+    public static void main(Args _args)
+    {
+        DimensionAttribute      dimAttr;
+        DimensionAttributeValue dimAttrVal;
+        DimensionAttributeValueSetItemView  setitemview;
+        str                     _dimName='Agreement';
+
+        while select setitemview
+            join dimAttr 
+            where dimAttr.RecId==setitemview.DimensionAttribute
+            &&
+            dimAttr.Name==_dimName
+        {
+            info(strFmt("Dimension value %1", dimAttr.DimensionValueColumnName));
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

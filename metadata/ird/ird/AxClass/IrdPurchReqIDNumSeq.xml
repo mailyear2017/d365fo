@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdPurchReqIDNumSeq</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+/// class for registering the application module
+/// </summary>
+internal final class IrdPurchReqIDNumSeq extends NumberSeqApplicationModule
+{
+    ///
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>numberSeqModule</Name>
+				<Source><![CDATA[
+    public NumberSeqModule numberSeqModule()
+    {
+        return NumberSeqModule::Purch;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>buildModulesMapSubscriber</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// adding module to th emap
+    /// </summary>
+    /// <param name = "numberSeqModulesMap"> params not used</param>
+    [SubscribesTo(classStr(NumberSeqGlobal),delegateStr(NumberSeqGlobal, buildModulesMapDelegate))]
+    static void buildModulesMapSubscriber(Map   numberSeqModulesMap)
+    {
+        NumberSeqGlobal::addModuleToMap(classnum(IrdPurchReqIDNumSeq),numberSeqModulesMap);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>loadModule</Name>
+				<Source><![CDATA[
+    protected void loadModule()
+    {
+        NumberSeqDatatype   datatype = NumberSeqDatatype::construct();
+
+        datatype.parmDatatypeId(extendedTypeNum(SimplePurchReqId));
+        datatype.parmReferenceHelp(literalStr("Number sequence for simple purchase requisition"));
+        datatype.parmWizardIsContinuous(NoYes::No);
+        datatype.parmWizardIsManual(NoYes::No);
+        datatype.parmWizardfetchAheadQty(10);
+        datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        datatype.parmSortField(1);
+
+        datatype.addParameterType(NumberSeqParameterType::DataArea,true,false);
+        this.create(datatype);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

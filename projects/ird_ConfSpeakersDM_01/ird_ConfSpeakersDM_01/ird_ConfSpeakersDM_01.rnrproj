@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>ird</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{277da09c-dc06-4746-82cf-6e96f9464468}</ProjectGuid>
+    <Name>ird_ConfSpeakersDM_01</Name>
+    <RootNamespace>ird_ConfSpeakersDM_01</RootNamespace>
+    <StartupType>MenuItemDisplay</StartupType>
+    <StartupObject>Specializations_MenuItem</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="AxClass\tableinsert01">
+      <SubType>Content</SubType>
+      <Name>tableinsert01</Name>
+      <Link>Classes\tableinsert01</Link>
+    </Content>
+    <Content Include="AxEnum\SpeakerStatus">
+      <SubType>Content</SubType>
+      <Name>SpeakerStatus</Name>
+      <Link>SpeakerStatus</Link>
+    </Content>
+    <Content Include="AxForm\SpeakersForm">
+      <SubType>Content</SubType>
+      <Name>SpeakersForm</Name>
+      <Link>Forms\SpeakersForm</Link>
+    </Content>
+    <Content Include="AxForm\Specializations_form">
+      <SubType>Content</SubType>
+      <Name>Specializations_form</Name>
+      <Link>Specializations_form</Link>
+    </Content>
+    <Content Include="AxLabelFile\ird_labels_en-US">
+      <SubType>Content</SubType>
+      <Name>ird_labels_en-US</Name>
+      <Link>ird_labels_en-US</Link>
+    </Content>
+    <Content Include="AxMenuExtension\MainMenu.ird_extn">
+      <SubType>Content</SubType>
+      <Name>MainMenu.ird_extn</Name>
+      <Link>Menu Extensions\MainMenu.ird_extn</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\SpeakersMI">
+      <SubType>Content</SubType>
+      <Name>SpeakersMI</Name>
+      <Link>Display Menu Items\SpeakersMI</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\Specializations_MenuItem">
+      <SubType>Content</SubType>
+      <Name>Specializations_MenuItem</Name>
+      <Link>Display Menu Items\Specializations_MenuItem</Link>
+    </Content>
+    <Content Include="AxMenu\Conferences">
+      <SubType>Content</SubType>
+      <Name>Conferences</Name>
+      <Link>Menus\Conferences</Link>
+    </Content>
+    <Content Include="AxQuery\ird_speceaclizationformquery">
+      <SubType>Content</SubType>
+      <Name>ird_speceaclizationformquery</Name>
+      <Link>Simple Queries\ird_speceaclizationformquery</Link>
+    </Content>
+    <Content Include="AxTable\ird_speaker">
+      <SubType>Content</SubType>
+      <Name>ird_speaker</Name>
+      <Link>ird_speaker</Link>
+    </Content>
+    <Content Include="AxTable\ird_speakerspecialization">
+      <SubType>Content</SubType>
+      <Name>ird_speakerspecialization</Name>
+      <Link>ird_speakerspecialization</Link>
+    </Content>
+    <Content Include="ird_labels.en-US.label.txt">
+      <SubType>Content</SubType>
+      <Name>ird_labels.en-US.label.txt</Name>
+      <DependentUpon>AxLabelFile\ird_labels_en-US</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Display Menu Items\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Menu Extensions\" />
+    <Folder Include="Menus\" />
+    <Folder Include="Simple Queries\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>

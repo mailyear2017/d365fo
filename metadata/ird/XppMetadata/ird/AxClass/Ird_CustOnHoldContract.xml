@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<z:anyType xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxCompilerMetadata" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+	<IsFinal>true</IsFinal>
+	<IsInternal>true</IsInternal>
+	<Attributes>
+		<AxAttribute>
+			<Name>DataContractAttribute</Name>
+			<Parameters />
+		</AxAttribute>
+	</Attributes>
+	<Members>
+		<AxClassMemberVariable>
+			<Type>Date</Type>
+			<TypeName></TypeName>
+			<Name>fromdate</Name>
+			<Attributes />
+		</AxClassMemberVariable>
+		<AxClassMemberVariable>
+			<Type>Date</Type>
+			<TypeName></TypeName>
+			<Name>todate</Name>
+			<Attributes />
+		</AxClassMemberVariable>
+		<AxClassMemberVariable>
+			<Type>Enum</Type>
+			<TypeName>NoYes</TypeName>
+			<Name>debug</Name>
+			<Attributes />
+		</AxClassMemberVariable>
+	</Members>
+	<Methods>
+		<Method>
+			<Name>parmFromdate</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>Datamember</Name>
+					<Parameters />
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationLabel</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"From Date"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationDisplayOrder</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"1"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Date</Type>
+					<TypeName></TypeName>
+					<DefaultValue>fromdate</DefaultValue>
+					<Name>_fromdate</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Date</Type>
+				<TypeName></TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>parmTodate</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>Datamember</Name>
+					<Parameters />
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationLabel</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"To Date"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationDisplayOrder</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"2"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Date</Type>
+					<TypeName></TypeName>
+					<DefaultValue>todate</DefaultValue>
+					<Name>_todate</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Date</Type>
+				<TypeName></TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>parmDebug</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>Datamember</Name>
+					<Parameters />
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationLabel</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"Debug"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>SysOperationDisplayOrder</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<TypeValue>"3"</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<Parameters>
+				<AxMethodParameter>
+					<Type>Enum</Type>
+					<TypeName>NoYes</TypeName>
+					<DefaultValue>debug</DefaultValue>
+					<Name>_debug</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Type>Enum</Type>
+				<TypeName>NoYes</TypeName>
+			</ReturnType>
+		</Method>
+	</Methods>
+</z:anyType>

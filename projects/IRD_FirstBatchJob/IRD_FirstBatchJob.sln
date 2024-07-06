@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "IRD_FirstBatchJob (USR) [ird]", "IRD_FirstBatchJob\IRD_FirstBatchJob.rnrproj", "{43C680F2-DEDA-45F5-94BC-75F67F4C353D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43C680F2-DEDA-45F5-94BC-75F67F4C353D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C680F2-DEDA-45F5-94BC-75F67F4C353D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3AC673F2-C505-484D-82CC-71CE151F7227}
+	EndGlobalSection
+EndGlobal

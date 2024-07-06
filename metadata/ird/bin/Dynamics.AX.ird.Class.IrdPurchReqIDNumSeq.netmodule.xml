@@ -1,0 +1,10 @@
+<EventHandlers>
+  <BusinessEventHandlers>
+    <EventHandler delegateElementName="NumberSeqGlobal" delegateElementTypeId="ClassTypeId" delegateMethodName="buildModulesMapDelegate" eventHandlerElementName="IrdPurchReqIDNumSeq" eventHandlerElementTypeId="ClassTypeId" eventHandlerMethodName="buildModulesMapSubscriber" delegateTypeId="DelegateTypeId" />
+  </BusinessEventHandlers>
+  <DataEventHandlers />
+  <FormEventHandlers />
+  <FormControlEventHandlers />
+  <FormDataSourceEventHandler />
+  <FormDataFieldEventHandler />
+</EventHandlers>

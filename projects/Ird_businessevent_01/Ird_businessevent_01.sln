@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33927.289
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_businessevent_01 (USR) [ird]", "Ird_businessevent_01\Ird_businessevent_01.rnrproj", "{8EEDD8CD-01ED-4E2A-BDB8-AD55CF1C5806}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EEDD8CD-01ED-4E2A-BDB8-AD55CF1C5806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEDD8CD-01ED-4E2A-BDB8-AD55CF1C5806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78942B21-DB83-4E15-8DDD-7B3658C8F39B}
+	EndGlobalSection
+EndGlobal

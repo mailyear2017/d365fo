@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>ird</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{e7a5ce7f-88b4-4cfd-8e5b-0baee8bc8c43}</ProjectGuid>
+    <Name>Ird_queryclasses_01</Name>
+    <RootNamespace>Ird_queryclasses_01</RootNamespace>
+    <StartupObject>IrdClassDemoWithStr</StartupObject>
+    <StartupType>Class</StartupType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Action Menu Items\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Menus\" />
+    <Folder Include="Simple Queries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxClass\IrdCallQueryClass">
+      <SubType>Content</SubType>
+      <Name>IrdCallQueryClass</Name>
+      <Link>Classes\IrdCallQueryClass</Link>
+    </Content>
+    <Content Include="AxClass\IrdClassDemoWithStr">
+      <SubType>Content</SubType>
+      <Name>IrdClassDemoWithStr</Name>
+      <Link>Classes\IrdClassDemoWithStr</Link>
+    </Content>
+    <Content Include="AxClass\IrdQueryclassdemo">
+      <SubType>Content</SubType>
+      <Name>IrdQueryclassdemo</Name>
+      <Link>Classes\IrdQueryclassdemo</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\IrdGenreicQueryMenuItem">
+      <SubType>Content</SubType>
+      <Name>IrdGenreicQueryMenuItem</Name>
+      <Link>Action Menu Items\IrdGenreicQueryMenuItem</Link>
+    </Content>
+    <Content Include="AxMenu\Conferences">
+      <SubType>Content</SubType>
+      <Name>Conferences</Name>
+      <Link>Menus\Conferences</Link>
+    </Content>
+    <Content Include="AxQuery\IrdQueryDemo01">
+      <SubType>Content</SubType>
+      <Name>IrdQueryDemo01</Name>
+      <Link>Simple Queries\IrdQueryDemo01</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdFormClassDemo01</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+///demo class 
+/// </summary>
+internal final class IrdFormClassDemo01
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Class entry point. The system will call this method when a designated menu 
+    /// is selected or when execution starts and this class is set as the startup class.
+    /// </summary>
+    /// <param name = "_args">The specified arguments.</param>
+    public static void main(Args _args)
+    {
+        FormRun formrun;
+        //Args    args;
+        int     j=0;
+        str s ='';
+
+        _args = new Args(formStr(SpeakersForm));
+        FormControl formcontrol;// = new FormControl;
+        formrun = new FormRun(_args);
+        formrun.init();
+        formrun.run();
+
+        for (int i=0; i<=formrun.design().controlCount(); i++)
+        {
+            j+=i;   
+            formcontrol=(formrun.design().controlNum(i));
+            s=formcontrol.dataSourceObject().name();
+            
+           // Info(formrun.design().control(i).name());
+            Info(s);
+        }
+            
+        //formrun.run();
+        //formrun.wait();
+
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

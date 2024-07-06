@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdWoStatusUpdateController</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class IrdWoStatusUpdateController extends SysOperationServiceController
+{
+  
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    protected   void new()
+    {
+        super(classStr(IrdWOStatusUpdateService),
+            methodStr(IrdWOStatusUpdateService,process),SysOperationExecutionMode::Synchronous);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>defaultcaption</Name>
+				<Source><![CDATA[
+        public ClassDescription defaultcaption()
+        {
+            return "Work Order Life Cycle Update";
+        }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>construct</Name>
+				<Source><![CDATA[
+    public static   IrdWOStatusUpdateController construct(SysOperationExecutionMode _executionmode=SysOperationExecutionMode::Synchronous)
+    {
+        irdWOStatusUpdateController controller;
+        controller = new irdWOStatusUpdateController();
+        controller.parmExecutionMode(_executionmode);
+
+        return controller;
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args _args)
+    {
+        IrdWOStatusUpdateController controller= IrdWOStatusUpdateController::construct();
+
+        controller.parmArgs(_args);
+        controller.startOperation();
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

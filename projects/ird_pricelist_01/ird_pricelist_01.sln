@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34407.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "ird_pricelist_01 (USR) [ird]", "ird_pricelist_01\ird_pricelist_01.rnrproj", "{070325E7-523F-463C-932F-A777E3B3EDDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{070325E7-523F-463C-932F-A777E3B3EDDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{070325E7-523F-463C-932F-A777E3B3EDDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48C5CC90-DD18-4FB2-86BC-8175F79B10DF}
+	EndGlobalSection
+EndGlobal

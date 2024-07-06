@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdWoStatusUpdateContract</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[DataContractAttribute]
+internal final class IrdWoStatusUpdateContract
+{
+    EntAssetWorkOrderLifecycleStateRecId fromstatus, tostatus;
+    EntAssetWorkOrderID fromworkorderid, toworkorderid;
+    
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>ParmFromWorkOrderId</Name>
+				<Source><![CDATA[
+    [DataMember, SysOperationLabel("From Work Order"),SysOperationDisplayOrder("1")]
+    public  EntAssetWorkOrderID ParmFromWorkOrderId(EntAssetWorkOrderID _fromworkorderid=fromworkorderid)
+    {
+        fromworkorderid=_fromworkorderid;
+        return fromworkorderid;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ParmToWorkOrderId</Name>
+				<Source><![CDATA[
+    [DataMember, SysOperationLabel("To Work Order"), SysOperationDisplayOrder("2")]
+    public  EntAssetWorkOrderID ParmToWorkOrderId(EntAssetWorkOrderID _toworkorderid=toworkorderid)
+    {
+        
+        toworkorderid=_toworkorderid;
+
+        if (toworkorderid < fromworkorderid)
+        {
+            throw Global::error("To work order must be greater than from work order number");
+        }
+
+        return toworkorderid;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ParmFromStatus</Name>
+				<Source><![CDATA[
+    [DataMember, SysOperationLabel("From LifeCyle State"), SysOperationDisplayOrder("3")]
+    public  EntAssetWorkOrderLifecycleStateRecId ParmFromStatus(EntAssetWorkOrderLifecycleStateRecId _fromstatus=fromstatus)
+    {
+        fromstatus=_fromstatus;
+        return fromstatus;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ParmToStatus</Name>
+				<Source><![CDATA[
+    [DataMember, SysOperationLabel("To LifeCycleState"), SysOperationDisplayOrder("4")]
+    public  EntAssetWorkOrderLifecycleStateRecId ParmToStatus(EntAssetWorkOrderLifecycleStateRecId _tostatus=tostatus)
+    {
+        tostatus=_tostatus;
+        return tostatus;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

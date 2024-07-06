@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Ird_CustOnHoldController</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class Ird_CustOnHoldController extends SysOperationServiceController
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    protected void new()
+    {
+        super(classStr(Ird_CustHoldService),methodStr(Ird_CustHoldService,process),
+            SysOperationExecutionMode::Synchronous);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DefaultCaption</Name>
+				<Source><![CDATA[
+    public ClassDescription DefaultCaption()
+    {
+        return("Customer On Hold interface");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Construct</Name>
+				<Source><![CDATA[
+    public static Ird_CustOnHoldController Construct(SysOperationExecutionMode _executionmode
+        =SysOperationExecutionMode::Synchronous)
+    {
+        Ird_CustOnHoldController controller = new Ird_CustOnHoldController();
+        controller.parmExecutionMode(_executionmode);
+        return controller;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args _args)
+    {
+        Ird_CustOnHoldController    controller;
+        controller= Ird_CustOnHoldController::Construct();
+        controller.parmArgs(_args);
+        controller.startOperation();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

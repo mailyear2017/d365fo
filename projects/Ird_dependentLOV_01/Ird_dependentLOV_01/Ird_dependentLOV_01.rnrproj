@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>ird</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{deb8b736-f56c-4770-b074-755a0855d643}</ProjectGuid>
+    <Name>Ird_dependentLOV_01</Name>
+    <RootNamespace>Ird_dependentLOV_01</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Display Menu Items\" />
+    <Folder Include="Form Extensions\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Menus\" />
+    <Folder Include="Table Extensions\" />
+    <Folder Include="Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxClass\Ird_EntAssetObjectTable_F_Extension">
+      <SubType>Content</SubType>
+      <Name>Ird_EntAssetObjectTable_F_Extension</Name>
+      <Link>Classes\Ird_EntAssetObjectTable_F_Extension</Link>
+    </Content>
+    <Content Include="AxFormExtension\EntAssetObjectTable.ird">
+      <SubType>Content</SubType>
+      <Name>EntAssetObjectTable.ird</Name>
+      <Link>Form Extensions\EntAssetObjectTable.ird</Link>
+    </Content>
+    <Content Include="AxFormExtension\EntAssetObjectType.ird">
+      <SubType>Content</SubType>
+      <Name>EntAssetObjectType.ird</Name>
+      <Link>Form Extensions\EntAssetObjectType.ird</Link>
+    </Content>
+    <Content Include="AxForm\Ird_AssetStructure">
+      <SubType>Content</SubType>
+      <Name>Ird_AssetStructure</Name>
+      <Link>Forms\Ird_AssetStructure</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\Ird_AssetStructure">
+      <SubType>Content</SubType>
+      <Name>Ird_AssetStructure</Name>
+      <Link>Display Menu Items\Ird_AssetStructure</Link>
+    </Content>
+    <Content Include="AxMenu\Conferences">
+      <SubType>Content</SubType>
+      <Name>Conferences</Name>
+      <Link>Menus\Conferences</Link>
+    </Content>
+    <Content Include="AxTableExtension\EntAssetObjectTable.ird">
+      <SubType>Content</SubType>
+      <Name>EntAssetObjectTable.ird</Name>
+      <Link>Table Extensions\EntAssetObjectTable.ird</Link>
+    </Content>
+    <Content Include="AxTableExtension\EntAssetObjectType.ird">
+      <SubType>Content</SubType>
+      <Name>EntAssetObjectType.ird</Name>
+      <Link>Table Extensions\EntAssetObjectType.ird</Link>
+    </Content>
+    <Content Include="AxTable\Ird_AssetStructure">
+      <SubType>Content</SubType>
+      <Name>Ird_AssetStructure</Name>
+      <Link>Tables\Ird_AssetStructure</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>

@@ -1,0 +1,47 @@
+﻿IrdCreateHourJournal	
+Ird_CustOnHoldController	SysOperationServiceController
+IrdWoStatusUpdateService	SysOperationServiceBase
+tableinsert01	
+SpeakerDP	SRSReportDataProviderBase
+IrdCustDataRequest	
+IrdEntAssetLifeCycleUpdate_WO	EntAssetLifecycleStateUpdate_WorkOrderTable
+Ird_EntAssetObjectTable_F_Extension	
+IrdSalesConfirmJournalPost_Extension	
+Ircoc01	
+IrdExportDataToFile	
+IrdCustDataService	
+IrdFindLatLongForLocation	
+IrdCallQueryClass	
+IrdGetDimValues	
+Ird_CustHoldService	SysOperationServiceBase
+Ird_GetEntitySQL	
+IrdQueryclassdemo	
+Students	
+DocuRef_C_Extension	
+populateIrdCustSOTable	
+TestSpeakerRDP	
+IrdSalesConfBusinessEvent	BusinessEventsBase
+CustTable_Ird_Extension	
+Parent_DatatoTables	
+Demo_ArgClass	
+IrdClassDemoWithStr	
+IrdHCMGoal_Extension	
+IrdWoStatusUpdateController	SysOperationServiceController
+SpeakerForm_COC_Extension	
+IrdDeleteHourJournals	
+PopulateDataToTables	
+IrdFormClassDemo01	
+Ird_speakerTab_findMethodCheck	
+IrdLoadSimplePurchReqNumSeq	
+IrdWoStatusUpdateContract	
+IrdPurchReqIDNumSeq	NumberSeqApplicationModule
+IrdCrossCompDemo02	
+CustTable_CustGroupModIRD_Extension	
+Ird_CustOnHoldContract	
+IrdTableEventHandlerClass	
+IrdCopyDataFromField	
+IrdCustDataResponse	
+SpeakerDataContract	
+IrdSalesConfBusEventContract	BusinessEventsContract
+Irdcoc01_Extension	
+IrdCrossCompDemo	

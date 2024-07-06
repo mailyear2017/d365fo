@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdQueryclassdemo</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class IrdQueryclassdemo
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Class entry point. The system will call this method when a designated menu 
+    /// is selected or when execution starts and this class is set as the startup class.
+    /// </summary>
+    /// <param name = "_args">The specified arguments.</param>
+    public static void main(Args _args)
+    {
+        IrdQueryclassdemo    q = new IrdQueryclassdemo();
+        q.myqueryclass();
+        //Info("hello");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>myqueryclass</Name>
+				<Source><![CDATA[
+    public  void myqueryclass()
+    {
+        Query   query;
+        QueryRun    queryrun;
+        QueryBuildDataSource qbd;
+        QueryBuildRange qbr;
+        CustTable       CustRec;
+        CustTrans       custTransrec;
+
+        query   = new   Query();
+
+        qbd=query.addDataSource(tableNum(CustTable));
+        qbd=query.addDataSource(tableNum(CustTrans));
+        qbd.relations(true);
+
+        qbd.addSelectionField(fieldNum(CustTable,AccountNum));
+        qbd.addSelectionField(fieldNum(CustTable,CustGroup));
+        qbr=qbd.addRange(fieldNum(CustTable,CustGroup));
+        qbr.value("!=40");
+
+        qbr=qbd.addRange(fieldNum(CustTable,AccountNum));
+        qbr.value("D*");// like operator
+
+       
+        qbd.addSelectionField(fieldNum(CustTrans,Voucher));
+        qbr=qbd.addRange(fieldNum(CustTrans,TransDate));
+        qbr.value(">=01-JAN-2017");
+       
+        
+        qbd.addSortField(fieldNum(CustTable,AccountNum));
+
+        queryrun    = new   QueryRun(query);
+
+        //queryrun.prompt();
+        while(queryrun.next())
+        {
+            CustRec=queryrun.getNo(1);//first data source
+            custTransrec=queryrun.getNo(2);
+            Info(strFmt("%1,%2, %3", CustRec.AccountNum,CustRec.CustGroup,custTransrec.Voucher));
+        }
+
+        info(query.getSQLStatement());
+        
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

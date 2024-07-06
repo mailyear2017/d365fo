@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_AddFieldFromADiffDS (USR) [ird]", "Ird_AddFieldFromADiffDS\Ird_AddFieldFromADiffDS.rnrproj", "{AB68CF7A-B4C2-4E7F-96D2-AE6CA735546B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB68CF7A-B4C2-4E7F-96D2-AE6CA735546B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB68CF7A-B4C2-4E7F-96D2-AE6CA735546B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D057DD94-74FE-4925-A48E-41E4B37B5CD0}
+	EndGlobalSection
+EndGlobal

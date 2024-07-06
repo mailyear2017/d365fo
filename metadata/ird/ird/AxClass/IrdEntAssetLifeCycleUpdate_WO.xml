@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdEntAssetLifeCycleUpdate_WO</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+public final class IrdEntAssetLifeCycleUpdate_WO extends EntAssetLifecycleStateUpdate_WorkOrderTable
+{
+   //EntAssetLifecycleStateUpdate_WorkOrderTable workorderstateupdate = EntAssetLifecycleStateUpdate::construct(tableStr(EntAssetWorkOrderTable));
+    EntAssetWorkOrderLifecycleState workOrderLifecycleStateloc;
+    
+   
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>updateLifecycleState</Name>
+				<Source><![CDATA[
+    public void updateLifecycleState()
+    {
+        workOrderLifecycleStateloc = EntAssetWorkOrderLifecycleState::find(this.parmNewLifecycleState().LifecycleState);
+    
+        if (!workOrderLifecycleStateloc)
+        {
+            return;
+        }
+    
+         
+        super();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>updateLog</Name>
+				<Source><![CDATA[
+    public  void    updateLog(RecId _recid)
+    {
+        EntAssetLifecycleStateLog log;
+        EntAssetLifecycleStateLog logloc;
+
+        log.initValue();
+        log.RefTableId					= newStateMap.LifecycleStateTableId;
+        log.RefRecId					= _recId;
+        log.Remark						= "Status Update from the Job";
+        log.LifecycleStateRefRecId		= newStateMap.LifecycleState;
+        log.LifecycleStateRefTableId	= tableNum(EntAssetWorkOrderLifecycleState);
+
+        select  firstonly forupdate logloc where log.RefRecId==_recid && log.Remark=="";
+
+        if (log.validateWrite())
+        {
+            if (logloc.RecId)
+            {
+                logloc.Remark   = log.Remark;
+                logloc.LifecycleStateRefRecId=log.LifecycleStateRefRecId;
+                logloc.LifecycleStateRefTableId=log.LifecycleStateRefTableId;
+
+                logloc.update();
+
+            }
+            else
+            {
+                log.insert();
+            }
+        }
+        else
+        {
+            throw error(strfmt("@SYS4007721", tablePname(EntAssetLifecycleStateLog)));
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>WOStatusupdate</Name>
+				<Source><![CDATA[
+    public void WOStatusupdate(EntAssetWorkOrderTable   _wotable)
+    {
+       
+        boolean						deleteUnpostedJournals;
+        
+
+        ttsbegin;
+
+            //workorderstateupdate.parmSkipDialog(true);
+            //workorderstateupdate.updateStateRecord(_wotable.RecId);
+        this.parmSkipDialog(true);
+        
+        this.updateLifecycleState();
+
+        this.updateStateRecord(_wotable.RecId);
+
+        this.updateLog(_wotable.RecId);
+        ttscommit;
+        
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>construct</Name>
+				<Source><![CDATA[
+    public static IrdEntAssetLifeCycleUpdate_WO construct()
+    {
+        return new IrdEntAssetLifeCycleUpdate_WO();
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

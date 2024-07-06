@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34407.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_tableEventHandler_01 (USR) [ird]", "Ird_tableEventHandler_01\Ird_tableEventHandler_01.rnrproj", "{7EC2F4CA-57FB-4097-BFF0-499FDA2EB749}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EC2F4CA-57FB-4097-BFF0-499FDA2EB749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC2F4CA-57FB-4097-BFF0-499FDA2EB749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1788B8A2-A8A2-451A-80E4-845FB430BB19}
+	EndGlobalSection
+EndGlobal

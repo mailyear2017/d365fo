@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>ird</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{5959fc1f-c8f8-4d21-a475-2075089d94ce}</ProjectGuid>
+    <Name>ird_callformfromMenu</Name>
+    <RootNamespace>ird_callformfromMenu</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Display Menu Items\" />
+    <Folder Include="Form Extensions\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Label Files\" />
+    <Folder Include="Menu Extensions\" />
+    <Folder Include="Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxFormExtension\CustTable.ird">
+      <SubType>Content</SubType>
+      <Name>CustTable.ird</Name>
+      <Link>Form Extensions\CustTable.ird</Link>
+    </Content>
+    <Content Include="AxForm\IrdCustSOForm">
+      <SubType>Content</SubType>
+      <Name>IrdCustSOForm</Name>
+      <Link>Forms\IrdCustSOForm</Link>
+    </Content>
+    <Content Include="AxLabelFile\ird_labels_en-US">
+      <SubType>Content</SubType>
+      <Name>ird_labels_en-US</Name>
+      <Link>Label Files\ird_labels_en-US</Link>
+    </Content>
+    <Content Include="AxMenuExtension\Conferences.ird">
+      <SubType>Content</SubType>
+      <Name>Conferences.ird</Name>
+      <Link>Menu Extensions\Conferences.ird</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\IrdCustSOForm">
+      <SubType>Content</SubType>
+      <Name>IrdCustSOForm</Name>
+      <Link>Display Menu Items\IrdCustSOForm</Link>
+    </Content>
+    <Content Include="AxTable\Ird_CustSalesOrderTable">
+      <SubType>Content</SubType>
+      <Name>Ird_CustSalesOrderTable</Name>
+      <Link>Tables\Ird_CustSalesOrderTable</Link>
+    </Content>
+    <Content Include="ird_labels.en-US.label.txt">
+      <SubType>Content</SubType>
+      <Name>ird_labels.en-US.label.txt</Name>
+      <DependentUpon>AxLabelFile\ird_labels_en-US</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>

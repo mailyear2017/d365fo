@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_SimpleDetailNumSeqJob (USR) [ird]", "Ird_SimpleDetailNumSeqJob\Ird_SimpleDetailNumSeqJob.rnrproj", "{AE332A7B-3710-41C4-9100-9C5C9F9C155A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE332A7B-3710-41C4-9100-9C5C9F9C155A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE332A7B-3710-41C4-9100-9C5C9F9C155A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAD3A12E-5E95-4E48-B771-47669A254EF2}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_TableWithFieldOfAllTypes_01 (USR) [ird]", "Ird_TableWithFieldOfAllTypes_01\Ird_TableWithFieldOfAllTypes_01.rnrproj", "{55F39168-C275-4562-A882-C7F560B47FB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55F39168-C275-4562-A882-C7F560B47FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F39168-C275-4562-A882-C7F560B47FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72D62A6C-4BFB-4F52-ABC2-8DCA6916448D}
+	EndGlobalSection
+EndGlobal

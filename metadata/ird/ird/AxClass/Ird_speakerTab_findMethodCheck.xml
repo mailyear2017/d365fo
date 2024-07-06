@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Ird_speakerTab_findMethodCheck</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+///
+///<summary>find method test class</summary>
+///
+internal final class Ird_speakerTab_findMethodCheck
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Class entry point. The system will call this method when a designated menu 
+    /// is selected or when execution starts and this class is set as the startup class.
+    /// </summary>
+    /// <param name = "_args">The specified arguments.</param>
+    public static void main(Args _args)
+    {
+        ird_speaker irdspeaker;
+        
+
+        irdspeaker= ird_speaker::find(_args.parm("Jack@gmail.com"));
+        Info(irdspeaker.FirstName);
+        if(ird_speaker::find(_args.parm("Jack@gmail.com")))
+        {
+            Info("Record found");
+        }
+            
+            
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

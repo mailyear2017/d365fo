@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdSalesConfBusinessEvent</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+/// This class is for adding the processing logic of business event
+/// </summary>
+/// 
+[BusinessEvents(classStr(IrdSalesConfBusEventContract),"SalesconfPost","Sales confirmation posting event",ModuleAxapta::SalesOrder)]
+public final class IrdSalesConfBusinessEvent extends BusinessEventsBase
+{
+    private SalesTable  salesTable;
+
+
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>parmSalestable</Name>
+				<Source><![CDATA[
+    private SalesTable  parmSalestable(SalesTable   _salesTable)
+    {
+        salesTable  =_salesTable;
+
+        return  salesTable;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>newFromSalestable</Name>
+				<Source><![CDATA[
+    public  static  IrdSalesConfBusinessevent newFromSalestable(SalesTable  _salesTable)
+    {
+        IrdSalesConfBusinessevent   businessevent   =   new IrdSalesConfBusinessevent();
+
+        businessevent.parmSalestable(_salesTable);
+        businessevent.buildContract();
+
+        return  businessevent;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    private void new()
+    {
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>buildContract</Name>
+				<Source><![CDATA[
+    [Wrappable(true),Hookable(true)]
+    public  BusinessEventsContract  buildContract()
+    {
+        return  IrdSalesConfBusEventContract::newFromSalesTable(salesTable);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

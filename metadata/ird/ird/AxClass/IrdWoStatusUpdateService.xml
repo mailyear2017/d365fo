@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdWoStatusUpdateService</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class IrdWoStatusUpdateService extends SysOperationServiceBase
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>process</Name>
+				<Source><![CDATA[
+    public void process(IrdWOStatusUpdateContract _contract)
+    {
+        EntAssetWorkOrderTable  workorderTable;
+        //EntAssetLifecycleStateUpdate_WorkOrderTable wos=EntAssetLifecycleStateUpdate::construct(tableStr(EntAssetWorkOrderTable));
+        IrdEntAssetLifeCycleUpdate_WO   LocWOStateUpd= IrdEntAssetLifeCycleUpdate_WO::construct();
+        //EntAssetLifecycleStateUpdate_WorkOrderTable    lifecyleupdate  = EntAssetLifecycleStateUpdate::construct(tableStr(EntAssetWorkOrderTable));
+
+        int recordcount=0;
+        EntAssetLifecycleStateMap   _newstate;
+        _newstate.LifecycleState=_contract.ParmToStatus();
+        _newstate.LifecycleStateTableId=tableNum(EntAssetWorkOrderTable);
+
+        Info("start processing of work order status update");
+
+        while   select forupdate workorderTable
+            where   workorderTable.WorkOrderId >= _contract.ParmFromWorkOrderId()
+                    && workorderTable.WorkOrderId <= _contract.ParmToWorkOrderId()
+                    && workorderTable.WorkOrderLifecycleState==_contract.ParmFromStatus()
+        {
+            if(workorderTable.RecId!=0)
+            {
+                
+                          
+                ttsbegin;
+                    //workorderTable.WorkOrderLifecycleState=_contract.ParmToStatus();
+                    //workorderTable.update();
+                //lifecyleupdate.parmNewLifecycleState(_newstate);
+                LocWOStateUpd.parmNewLifecycleState(_newstate);
+                LocWOStateUpd.WOStatusupdate(workorderTable);
+                ttscommit;
+            }
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

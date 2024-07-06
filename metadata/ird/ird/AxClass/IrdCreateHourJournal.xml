@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdCreateHourJournal</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class IrdCreateHourJournal
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Class entry point. The system will call this method when a designated menu 
+    /// is selected or when execution starts and this class is set as the startup class.
+    /// </summary>
+    /// <param name = "_args">The specified arguments.</param>
+    public static void main(Args _args)
+    {
+        ProjJournalTable    projJourHeader;
+        //Voucher     voucher;
+        ProjJournalTrans    jourLines;
+        date    d = today();
+        
+        IrdCreateHourJournal    createhourjournal   = new   IrdCreateHourJournal();
+        JournalId       jourid=createhourjournal.GetJourHdrId();
+        /*select  firstonly   projJourTable
+            order   by  projJourTable.JournalId desc
+            where   projJourTable.JournalNameId==IrdCreateHourJournal::GetJournalName();*/
+
+        ttsbegin;
+            
+            projJourHeader.Description="Journal Created from X++";
+            projJourHeader.JournalId  = jourid   ;
+            projJourHeader.JournalNameId=IrdCreateHourJournal::GetJournalName();
+            projJourHeader.JournalType=ProjJournalType::Hour;
+            projJourHeader.insert();
+       
+
+        //insert the lines data
+
+       
+            jourLines.ProjId='000059';
+            jourLines.JournalId=jourid;
+            jourLines.CategoryId='Apprentice';
+            jourLines.LineNum=1.00;
+            jourLines.LinePropertyId='Bill';
+            jourLines.Qty=8;
+            jourLines.ProjTransDate=d;
+            jourLines.Voucher=createhourjournal.GetNextVoucher();
+            jourLines.CurrencyId='USD';
+            jourLines.TransDate=d;
+            jourLines.insert();
+        ttscommit;
+        
+        Info(strFmt("journal Id : %1", projJourHeader.JournalId));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>GetJournalName</Name>
+				<Source><![CDATA[
+    public static JournalNameId   GetJournalName()
+    {
+        ProjJournalName     projJourName;
+
+        select firstonly  projJourName 
+            where  projJourName.JournalType==ProjJournalType::Hour;
+
+        return  projJourName.JournalNameId;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>GetNextVoucher</Name>
+				<Source><![CDATA[
+    public  str   GetNextVoucher()
+    {
+        ProjJournalName     projJourName;
+        NumberSeq   numSeq;
+        NumberSequenceTable     numSeqTable;
+        
+
+        ttsbegin;
+            {
+                projJourName=ProjJournalName::find(IrdCreateHourJournal::GetJournalName());
+                numSeqTable=NumberSequenceTable::find(projJourName.VoucherNumberSequenceTable);
+
+                Info(strfmt("NumSeq:%1",projJourName.VoucherNumberSequenceTable));
+
+                numSeq  =   NumberSeq::newGetVoucherFromId(numSeqTable.RecId);
+                numSeq.used();
+            }
+        ttscommit;
+
+        return numSeq.voucher();
+       
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>GetJourHdrId</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// select idview.Name, scope.DATAAREA, ref.NUMBERSEQUENCEDATATYPE, seq.NUMBERSEQUENCE, seq.TXT , dt.MODULE, dt.REFERENCETABLEID
+    //from NUMBERSEQUENCESCOPE scope
+    //    join NUMBERSEQUENCEREFERENCE ref on scope.RECID=ref.NUMBERSEQUENCESCOPE
+    //    join NUMBERSEQUENCETABLE seq	on seq.RECID	=	ref.NUMBERSEQUENCEID
+    //    join NUMBERSEQUENCEDATATYPE	dt on dt.RECID	=	ref.NUMBERSEQUENCEDATATYPE
+    //    join SYSTYPEIDVIEW	idview on idview.Id=dt.DATATYPEID
+    //    where scope.DATAAREA='USMF' and dt.module=14
+    /// 
+    /// </summary>
+    /// <param name = "_journalName"></param>
+    /// <returns></returns>
+    public str GetJourHdrId()
+    {
+        NUMBERSEQUENCETABLE     seq;
+        NUMBERSEQUENCESCOPE     scope;
+        NUMBERSEQUENCEREFERENCE ref;
+        NUMBERSEQUENCEDATATYPE  dt;
+        SysTypeIdView           idview;
+        NumberSeq       numseq;
+
+        seq=NumberSequenceTable::find(22565433631);
+        numseq  =   NumberSeq::newGetVoucherFromId(seq.RecId);
+        numseq.used();
+
+        return numseq.voucher();
+        
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

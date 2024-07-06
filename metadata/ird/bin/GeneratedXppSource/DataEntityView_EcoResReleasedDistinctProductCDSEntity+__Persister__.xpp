@@ -1,0 +1,2164 @@
+Private class __Persister__
+extends SysDataEntityPersister
+{
+    // Data source ID macros
+    #define.InventDistinctProduct_ID(1)
+    #define.EcoResDistinctProduct_ID(2)
+    #define.EcoResProductServiceWarranty_ID(3)
+    #define.EcoResProductSystemLanguage_ID(4)
+    #define.EcoResProductTranslationToSystemLanguage_ID(5)
+    #define.InventTableModuleSales_ID(6)
+    #define.UnitOfMeasure_ID(7)
+    #define.InventTableModuleInvent_ID(8)
+    #define.UnitOfMeasureInvent_ID(9)
+    #define.InventModelGroupItem_ID(10)
+    #define.InventModelGroup_ID(11)
+    #define.InventTable_ID(12)
+    #define.EcoResProductMaster_ID(13)
+    #define.EcoResProductMasterTranslationToSystemLanguage_ID(14)
+    #define.WarrantyInventTable_ID(15)
+    #define.InventDistinctProductDefaultSalesSetup_ID(16)
+    #define.InventDistinctItemCostPriceCurrentActivePerVariant_ID(17)
+    #define.InventDistinctItemCostPriceCurrentActivePerMaster_ID(18)
+    #define.InventDistinctItemSalesPriceCurrentActivePerVariant_ID(19)
+    #define.InventDistinctItemSalesPriceCurrentActivePerMaster_ID(20)
+    #define.Ledger_ID(21)
+    
+    // Data source buffers
+    InventDistinctProduct m_InventDistinctProduct;
+    EcoResDistinctProduct m_EcoResDistinctProduct;
+    EcoResProductServiceWarranty m_EcoResProductServiceWarranty;
+    EcoResProductSystemLanguage m_EcoResProductSystemLanguage;
+    EcoResProductTranslation m_EcoResProductTranslationToSystemLanguage;
+    InventTableModule m_InventTableModuleSales;
+    UnitOfMeasure m_UnitOfMeasure;
+    InventTableModule m_InventTableModuleInvent;
+    UnitOfMeasure m_UnitOfMeasureInvent;
+    InventModelGroupItem m_InventModelGroupItem;
+    InventModelGroup m_InventModelGroup;
+    InventTable m_InventTable;
+    EcoResProductMaster m_EcoResProductMaster;
+    EcoResProductTranslation m_EcoResProductMasterTranslationToSystemLanguage;
+    WarrantyInventTable m_WarrantyInventTable;
+    InventDistinctProductDefaultSalesSetup m_InventDistinctProductDefaultSalesSetup;
+    InventDistinctItemPriceCurrentActivePerSite m_InventDistinctItemCostPriceCurrentActivePerVariant;
+    InventDistinctItemPriceCurrentActivePerSite m_InventDistinctItemCostPriceCurrentActivePerMaster;
+    InventDistinctItemPriceCurrentActivePerSite m_InventDistinctItemSalesPriceCurrentActivePerVariant;
+    InventDistinctItemPriceCurrentActivePerSite m_InventDistinctItemSalesPriceCurrentActivePerMaster;
+    Ledger m_Ledger;
+    
+    protected void mapEntityToDataSources(DataEntityRuntimeContext _entityCtx)
+    {
+        this.validateFieldFailed = false;
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventDistinctProduct'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('EcoResDistinctProduct'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('EcoResProductServiceWarranty'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('EcoResProductSystemLanguage'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('EcoResProductTranslationToSystemLanguage'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventTableModuleSales'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('UnitOfMeasure'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventTableModuleInvent'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('UnitOfMeasureInvent'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventModelGroupItem'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventModelGroup'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventTable'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('EcoResProductMaster'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('EcoResProductMasterTranslationToSystemLanguage'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('WarrantyInventTable'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventDistinctProductDefaultSalesSetup'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventDistinctItemCostPriceCurrentActivePerVariant'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventDistinctItemCostPriceCurrentActivePerMaster'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventDistinctItemSalesPriceCurrentActivePerVariant'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('InventDistinctItemSalesPriceCurrentActivePerMaster'));
+        this.mapEntityToDataSource(_entityCtx, _entityCtx.getRuntimeContextByName('Ledger'));
+        this.mapEntityToDataSourcesExtensions(_entityCtx);
+        if(this.validateFieldFailed)
+        {
+            throw Exception::ViewDataSourceValidation;
+        }
+    }
+    protected boolean saveDataSources(DataEntityRuntimeContext _entityCtx)
+    {
+        boolean rtrn = true;
+        throw error("@ApplicationFoundation:DataEntitiesReadOnlyError");
+        return rtrn;
+    }
+    protected boolean deleteDataSources(DataEntityRuntimeContext _entityCtx)
+    {
+        boolean rtrn = true;
+        throw error("@ApplicationFoundation:DataEntitiesReadOnlyError");
+        return rtrn;
+    }
+    private void mapToDataSource_DS1(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctProduct _inventDistinctProduct, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ItemNumber), _inventDistinctProduct, fieldnum(InventDistinctProduct, ItemId), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductConfigurationId), _inventDistinctProduct, fieldnum(InventDistinctProduct, configId), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductColorId), _inventDistinctProduct, fieldnum(InventDistinctProduct, InventColorId), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductSizeId), _inventDistinctProduct, fieldnum(InventDistinctProduct, InventSizeId), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductStyleId), _inventDistinctProduct, fieldnum(InventDistinctProduct, InventStyleId), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductVersionId), _inventDistinctProduct, fieldnum(InventDistinctProduct, InventVersionId), 1);
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _inventDistinctProduct, _ecoResReleasedDistinctProductCDSEntity);
+            _inventDistinctProduct.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS2(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResDistinctProduct _ecoResDistinctProduct, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductNumber), _ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, DisplayProductNumber), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductType), _ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, ProductType), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ServiceType), _ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, ServiceType), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, IsCatchWeightProduct), _ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, PdsCWProduct), 1);
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _ecoResDistinctProduct, _ecoResReleasedDistinctProductCDSEntity);
+            _ecoResDistinctProduct.trackFieldExternallySet(false);
+        }
+        if(_ecoResDistinctProduct IS EcoResDistinctProductVariant)
+        {
+            EcoResDistinctProductVariant _ecoResDistinctProductVariant = _ecoResDistinctProduct AS EcoResDistinctProductVariant;
+            if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+            {
+                
+                this.mapToDataSourceExtensions(_dataSourceCtx, _ecoResDistinctProductVariant, _ecoResReleasedDistinctProductCDSEntity);
+                _ecoResDistinctProductVariant.trackFieldExternallySet(false);
+            }
+        }
+    }
+    private void mapToDataSource_DS3(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductServiceWarranty _ecoResProductServiceWarranty, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, WarrantyDurationTime), _ecoResProductServiceWarranty, fieldnum(EcoResProductServiceWarranty, DurationTime), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, WarrantyDurationTimeUnit), _ecoResProductServiceWarranty, fieldnum(EcoResProductServiceWarranty, DurationTimeUnit), 1);
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _ecoResProductServiceWarranty, _ecoResReleasedDistinctProductCDSEntity);
+            _ecoResProductServiceWarranty.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS4(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductSystemLanguage _ecoResProductSystemLanguage, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        
+        this.mapToDataSourceExtensions(_dataSourceCtx, _ecoResProductSystemLanguage, _ecoResReleasedDistinctProductCDSEntity);
+        _ecoResProductSystemLanguage.trackFieldExternallySet(false);
+    }
+    private void mapToDataSource_DS5(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductTranslation _ecoResProductTranslationToSystemLanguage, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _ecoResProductTranslationToSystemLanguage, _ecoResReleasedDistinctProductCDSEntity);
+            _ecoResProductTranslationToSystemLanguage.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS6(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventTableModule _inventTableModuleSales, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _inventTableModuleSales, _ecoResReleasedDistinctProductCDSEntity);
+            boolean _isAnyFieldSet_ = this.isAnyFieldSet_DS6(_inventTableModuleSales, _dataSourceCtx, _entityCtx);
+            if(_isAnyFieldSet_)
+            {
+                _inventTableModuleSales.ModuleType = this.string2Enum('Sales', 'ModuleInventPurchSales');
+            }
+            _inventTableModuleSales.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS7(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, UnitOfMeasure _unitOfMeasure, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, SalesUnitSymbol), _unitOfMeasure, fieldnum(UnitOfMeasure, Symbol), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, SalesUnitDecimalPrecision), _unitOfMeasure, fieldnum(UnitOfMeasure, DecimalPrecision), 1);
+        
+        this.mapToDataSourceExtensions(_dataSourceCtx, _unitOfMeasure, _ecoResReleasedDistinctProductCDSEntity);
+        _unitOfMeasure.trackFieldExternallySet(false);
+    }
+    private void mapToDataSource_DS8(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventTableModule _inventTableModuleInvent, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _inventTableModuleInvent, _ecoResReleasedDistinctProductCDSEntity);
+            boolean _isAnyFieldSet_ = this.isAnyFieldSet_DS8(_inventTableModuleInvent, _dataSourceCtx, _entityCtx);
+            if(_isAnyFieldSet_)
+            {
+                _inventTableModuleInvent.ModuleType = this.string2Enum('Invent', 'ModuleInventPurchSales');
+            }
+            _inventTableModuleInvent.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS9(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, UnitOfMeasure _unitOfMeasureInvent, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, InventoryUnitDecimalPrecision), _unitOfMeasureInvent, fieldnum(UnitOfMeasure, DecimalPrecision), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, InventoryUnitSymbol), _unitOfMeasureInvent, fieldnum(UnitOfMeasure, Symbol), 1);
+        
+        this.mapToDataSourceExtensions(_dataSourceCtx, _unitOfMeasureInvent, _ecoResReleasedDistinctProductCDSEntity);
+        _unitOfMeasureInvent.trackFieldExternallySet(false);
+    }
+    private void mapToDataSource_DS10(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventModelGroupItem _inventModelGroupItem, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _inventModelGroupItem, _ecoResReleasedDistinctProductCDSEntity);
+            _inventModelGroupItem.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS11(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventModelGroup _inventModelGroup, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, IsStockedProduct), _inventModelGroup, fieldnum(InventModelGroup, StockedProduct), 1);
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _inventModelGroup, _ecoResReleasedDistinctProductCDSEntity);
+            _inventModelGroup.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS12(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventTable _inventTable, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _inventTable, _ecoResReleasedDistinctProductCDSEntity);
+            _inventTable.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS13(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductMaster _ecoResProductMaster, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _ecoResProductMaster, _ecoResReleasedDistinctProductCDSEntity);
+            _ecoResProductMaster.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS14(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductTranslation _ecoResProductMasterTranslationToSystemLanguage, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _ecoResProductMasterTranslationToSystemLanguage, _ecoResReleasedDistinctProductCDSEntity);
+            _ecoResProductMasterTranslationToSystemLanguage.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS15(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, WarrantyInventTable _warrantyInventTable, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, WarrantablePriceRangeBaseType), _warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeBaseType), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, LowerWarrantablePriceRangeLimit), _warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeMin), 1);
+            this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, UpperWarrantablePriceRangeLimit), _warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeMax), 1);
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _warrantyInventTable, _ecoResReleasedDistinctProductCDSEntity);
+            _warrantyInventTable.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS16(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctProductDefaultSalesSetup _inventDistinctProductDefaultSalesSetup, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            
+            this.mapToDataSourceExtensions(_dataSourceCtx, _inventDistinctProductDefaultSalesSetup, _ecoResReleasedDistinctProductCDSEntity);
+            _inventDistinctProductDefaultSalesSetup.trackFieldExternallySet(false);
+        }
+    }
+    private void mapToDataSource_DS17(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemCostPriceCurrentActivePerVariant, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        
+        this.mapToDataSourceExtensions(_dataSourceCtx, _inventDistinctItemCostPriceCurrentActivePerVariant, _ecoResReleasedDistinctProductCDSEntity);
+        boolean _isAnyFieldSet_ = this.isAnyFieldSet_DS17(_inventDistinctItemCostPriceCurrentActivePerVariant, _dataSourceCtx, _entityCtx);
+        if(_isAnyFieldSet_)
+        {
+            _inventDistinctItemCostPriceCurrentActivePerVariant.PriceType = this.string2Enum('Cost', 'CostingVersionPriceType');
+        }
+        _inventDistinctItemCostPriceCurrentActivePerVariant.trackFieldExternallySet(false);
+    }
+    private void mapToDataSource_DS18(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemCostPriceCurrentActivePerMaster, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        
+        this.mapToDataSourceExtensions(_dataSourceCtx, _inventDistinctItemCostPriceCurrentActivePerMaster, _ecoResReleasedDistinctProductCDSEntity);
+        boolean _isAnyFieldSet_ = this.isAnyFieldSet_DS18(_inventDistinctItemCostPriceCurrentActivePerMaster, _dataSourceCtx, _entityCtx);
+        if(_isAnyFieldSet_)
+        {
+            _inventDistinctItemCostPriceCurrentActivePerMaster.PriceType = this.string2Enum('Cost', 'CostingVersionPriceType');
+        }
+        _inventDistinctItemCostPriceCurrentActivePerMaster.trackFieldExternallySet(false);
+    }
+    private void mapToDataSource_DS19(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemSalesPriceCurrentActivePerVariant, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        
+        this.mapToDataSourceExtensions(_dataSourceCtx, _inventDistinctItemSalesPriceCurrentActivePerVariant, _ecoResReleasedDistinctProductCDSEntity);
+        boolean _isAnyFieldSet_ = this.isAnyFieldSet_DS19(_inventDistinctItemSalesPriceCurrentActivePerVariant, _dataSourceCtx, _entityCtx);
+        if(_isAnyFieldSet_)
+        {
+            _inventDistinctItemSalesPriceCurrentActivePerVariant.PriceType = this.string2Enum('Sales', 'CostingVersionPriceType');
+        }
+        _inventDistinctItemSalesPriceCurrentActivePerVariant.trackFieldExternallySet(false);
+    }
+    private void mapToDataSource_DS20(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemSalesPriceCurrentActivePerMaster, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        
+        this.mapToDataSourceExtensions(_dataSourceCtx, _inventDistinctItemSalesPriceCurrentActivePerMaster, _ecoResReleasedDistinctProductCDSEntity);
+        boolean _isAnyFieldSet_ = this.isAnyFieldSet_DS20(_inventDistinctItemSalesPriceCurrentActivePerMaster, _dataSourceCtx, _entityCtx);
+        if(_isAnyFieldSet_)
+        {
+            _inventDistinctItemSalesPriceCurrentActivePerMaster.PriceType = this.string2Enum('Sales', 'CostingVersionPriceType');
+        }
+        _inventDistinctItemSalesPriceCurrentActivePerMaster.trackFieldExternallySet(false);
+    }
+    private void mapToDataSource_DS21(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx, Ledger _ledger, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, CurrencyCode), _ledger, fieldnum(Ledger, AccountingCurrency), 1);
+        
+        this.mapToDataSourceExtensions(_dataSourceCtx, _ledger, _ecoResReleasedDistinctProductCDSEntity);
+        _ledger.trackFieldExternallySet(false);
+    }
+    protected void doMapEntityToDataSource(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx)
+    {
+        switch(_dataSourceCtx.id())
+        {
+            case #InventDistinctProduct_ID:
+                this.mapToDataSource_DS1(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResDistinctProduct_ID:
+                this.mapToDataSource_DS2(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductServiceWarranty_ID:
+                this.mapToDataSource_DS3(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductSystemLanguage_ID:
+                this.mapToDataSource_DS4(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductTranslationToSystemLanguage_ID:
+                this.mapToDataSource_DS5(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventTableModuleSales_ID:
+                this.mapToDataSource_DS6(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #UnitOfMeasure_ID:
+                this.mapToDataSource_DS7(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventTableModuleInvent_ID:
+                this.mapToDataSource_DS8(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #UnitOfMeasureInvent_ID:
+                this.mapToDataSource_DS9(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventModelGroupItem_ID:
+                this.mapToDataSource_DS10(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventModelGroup_ID:
+                this.mapToDataSource_DS11(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventTable_ID:
+                this.mapToDataSource_DS12(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductMaster_ID:
+                this.mapToDataSource_DS13(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductMasterTranslationToSystemLanguage_ID:
+                this.mapToDataSource_DS14(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #WarrantyInventTable_ID:
+                this.mapToDataSource_DS15(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctProductDefaultSalesSetup_ID:
+                this.mapToDataSource_DS16(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemCostPriceCurrentActivePerVariant_ID:
+                this.mapToDataSource_DS17(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemCostPriceCurrentActivePerMaster_ID:
+                this.mapToDataSource_DS18(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemSalesPriceCurrentActivePerVariant_ID:
+                this.mapToDataSource_DS19(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemSalesPriceCurrentActivePerMaster_ID:
+                this.mapToDataSource_DS20(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #Ledger_ID:
+                this.mapToDataSource_DS21(_entityCtx, _dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            default :
+                this.doMapEntityToDataSourceExtensions(_entityCtx, _dataSourceCtx);
+                break;
+        }
+    }
+    private void mapFromDataSource_DS1(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctProduct _inventDistinctProduct, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapDataSourceFieldToEntityField(_inventDistinctProduct, fieldnum(InventDistinctProduct, ItemId), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ItemNumber), false);
+        this.mapDataSourceFieldToEntityField(_inventDistinctProduct, fieldnum(InventDistinctProduct, configId), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductConfigurationId), false);
+        this.mapDataSourceFieldToEntityField(_inventDistinctProduct, fieldnum(InventDistinctProduct, InventColorId), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductColorId), false);
+        this.mapDataSourceFieldToEntityField(_inventDistinctProduct, fieldnum(InventDistinctProduct, InventSizeId), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductSizeId), false);
+        this.mapDataSourceFieldToEntityField(_inventDistinctProduct, fieldnum(InventDistinctProduct, InventStyleId), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductStyleId), false);
+        this.mapDataSourceFieldToEntityField(_inventDistinctProduct, fieldnum(InventDistinctProduct, InventVersionId), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductVersionId), false);
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventDistinctProduct, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventDistinctProduct);
+    }
+    private void mapFromDataSource_DS2(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResDistinctProduct _ecoResDistinctProduct, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapDataSourceFieldToEntityField(_ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, DisplayProductNumber), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductNumber), false);
+        this.mapDataSourceFieldToEntityField(_ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, ProductType), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductType), false);
+        this.mapDataSourceFieldToEntityField(_ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, ServiceType), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, ServiceType), false);
+        this.mapDataSourceFieldToEntityField(_ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, PdsCWProduct), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, IsCatchWeightProduct), false);
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _ecoResDistinctProduct, _ecoResReleasedDistinctProductCDSEntity);
+        if(_ecoResDistinctProduct IS EcoResDistinctProductVariant)
+        {
+            EcoResDistinctProductVariant _ecoResDistinctProductVariant = _ecoResDistinctProduct AS EcoResDistinctProductVariant;
+            this.mapFromDataSourceExtensions(_dataSourceCtx, _ecoResDistinctProductVariant, _ecoResReleasedDistinctProductCDSEntity);
+        }
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _ecoResDistinctProduct);
+    }
+    private void mapFromDataSource_DS3(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductServiceWarranty _ecoResProductServiceWarranty, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapDataSourceFieldToEntityField(_ecoResProductServiceWarranty, fieldnum(EcoResProductServiceWarranty, DurationTime), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, WarrantyDurationTime), false);
+        this.mapDataSourceFieldToEntityField(_ecoResProductServiceWarranty, fieldnum(EcoResProductServiceWarranty, DurationTimeUnit), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, WarrantyDurationTimeUnit), false);
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _ecoResProductServiceWarranty, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _ecoResProductServiceWarranty);
+    }
+    private void mapFromDataSource_DS4(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductSystemLanguage _ecoResProductSystemLanguage, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _ecoResProductSystemLanguage, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _ecoResProductSystemLanguage);
+    }
+    private void mapFromDataSource_DS5(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductTranslation _ecoResProductTranslationToSystemLanguage, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _ecoResProductTranslationToSystemLanguage, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _ecoResProductTranslationToSystemLanguage);
+    }
+    private void mapFromDataSource_DS6(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventTableModule _inventTableModuleSales, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventTableModuleSales, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventTableModuleSales);
+    }
+    private void mapFromDataSource_DS7(DataEntityDataSourceRuntimeContext _dataSourceCtx, UnitOfMeasure _unitOfMeasure, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapDataSourceFieldToEntityField(_unitOfMeasure, fieldnum(UnitOfMeasure, Symbol), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, SalesUnitSymbol), false);
+        this.mapDataSourceFieldToEntityField(_unitOfMeasure, fieldnum(UnitOfMeasure, DecimalPrecision), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, SalesUnitDecimalPrecision), false);
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _unitOfMeasure, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _unitOfMeasure);
+    }
+    private void mapFromDataSource_DS8(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventTableModule _inventTableModuleInvent, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventTableModuleInvent, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventTableModuleInvent);
+    }
+    private void mapFromDataSource_DS9(DataEntityDataSourceRuntimeContext _dataSourceCtx, UnitOfMeasure _unitOfMeasureInvent, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapDataSourceFieldToEntityField(_unitOfMeasureInvent, fieldnum(UnitOfMeasure, DecimalPrecision), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, InventoryUnitDecimalPrecision), false);
+        this.mapDataSourceFieldToEntityField(_unitOfMeasureInvent, fieldnum(UnitOfMeasure, Symbol), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, InventoryUnitSymbol), false);
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _unitOfMeasureInvent, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _unitOfMeasureInvent);
+    }
+    private void mapFromDataSource_DS10(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventModelGroupItem _inventModelGroupItem, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventModelGroupItem, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventModelGroupItem);
+    }
+    private void mapFromDataSource_DS11(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventModelGroup _inventModelGroup, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapDataSourceFieldToEntityField(_inventModelGroup, fieldnum(InventModelGroup, StockedProduct), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, IsStockedProduct), false);
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventModelGroup, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventModelGroup);
+    }
+    private void mapFromDataSource_DS12(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventTable _inventTable, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventTable, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventTable);
+    }
+    private void mapFromDataSource_DS13(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductMaster _ecoResProductMaster, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _ecoResProductMaster, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _ecoResProductMaster);
+    }
+    private void mapFromDataSource_DS14(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductTranslation _ecoResProductMasterTranslationToSystemLanguage, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _ecoResProductMasterTranslationToSystemLanguage, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _ecoResProductMasterTranslationToSystemLanguage);
+    }
+    private void mapFromDataSource_DS15(DataEntityDataSourceRuntimeContext _dataSourceCtx, WarrantyInventTable _warrantyInventTable, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapDataSourceFieldToEntityField(_warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeBaseType), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, WarrantablePriceRangeBaseType), false);
+        this.mapDataSourceFieldToEntityField(_warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeMin), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, LowerWarrantablePriceRangeLimit), false);
+        this.mapDataSourceFieldToEntityField(_warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeMax), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, UpperWarrantablePriceRangeLimit), false);
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _warrantyInventTable, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _warrantyInventTable);
+    }
+    private void mapFromDataSource_DS16(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctProductDefaultSalesSetup _inventDistinctProductDefaultSalesSetup, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventDistinctProductDefaultSalesSetup, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventDistinctProductDefaultSalesSetup);
+    }
+    private void mapFromDataSource_DS17(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemCostPriceCurrentActivePerVariant, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventDistinctItemCostPriceCurrentActivePerVariant, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventDistinctItemCostPriceCurrentActivePerVariant);
+    }
+    private void mapFromDataSource_DS18(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemCostPriceCurrentActivePerMaster, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventDistinctItemCostPriceCurrentActivePerMaster, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventDistinctItemCostPriceCurrentActivePerMaster);
+    }
+    private void mapFromDataSource_DS19(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemSalesPriceCurrentActivePerVariant, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventDistinctItemSalesPriceCurrentActivePerVariant, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventDistinctItemSalesPriceCurrentActivePerVariant);
+    }
+    private void mapFromDataSource_DS20(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemSalesPriceCurrentActivePerMaster, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _inventDistinctItemSalesPriceCurrentActivePerMaster, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _inventDistinctItemSalesPriceCurrentActivePerMaster);
+    }
+    private void mapFromDataSource_DS21(DataEntityDataSourceRuntimeContext _dataSourceCtx, Ledger _ledger, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity)
+    {
+        this.mapDataSourceFieldToEntityField(_ledger, fieldnum(Ledger, AccountingCurrency), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, CurrencyCode), false);
+        this.mapFromDataSourceExtensions(_dataSourceCtx, _ledger, _ecoResReleasedDistinctProductCDSEntity);
+        // map system fields (e.g. recid and recversion) from data source buffer to view record.
+        _ecoResReleasedDistinctProductCDSEntity.fromViewDataSource(_dataSourceCtx.id(), _ledger);
+    }
+    protected void doMapDataSourceToEntity(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx)
+    {
+        switch(_dataSourceCtx.id())
+        {
+            case #InventDistinctProduct_ID:
+                this.mapFromDataSource_DS1(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResDistinctProduct_ID:
+                this.mapFromDataSource_DS2(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductServiceWarranty_ID:
+                this.mapFromDataSource_DS3(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductSystemLanguage_ID:
+                this.mapFromDataSource_DS4(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductTranslationToSystemLanguage_ID:
+                this.mapFromDataSource_DS5(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventTableModuleSales_ID:
+                this.mapFromDataSource_DS6(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #UnitOfMeasure_ID:
+                this.mapFromDataSource_DS7(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventTableModuleInvent_ID:
+                this.mapFromDataSource_DS8(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #UnitOfMeasureInvent_ID:
+                this.mapFromDataSource_DS9(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventModelGroupItem_ID:
+                this.mapFromDataSource_DS10(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventModelGroup_ID:
+                this.mapFromDataSource_DS11(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventTable_ID:
+                this.mapFromDataSource_DS12(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductMaster_ID:
+                this.mapFromDataSource_DS13(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductMasterTranslationToSystemLanguage_ID:
+                this.mapFromDataSource_DS14(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #WarrantyInventTable_ID:
+                this.mapFromDataSource_DS15(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctProductDefaultSalesSetup_ID:
+                this.mapFromDataSource_DS16(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemCostPriceCurrentActivePerVariant_ID:
+                this.mapFromDataSource_DS17(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemCostPriceCurrentActivePerMaster_ID:
+                this.mapFromDataSource_DS18(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemSalesPriceCurrentActivePerVariant_ID:
+                this.mapFromDataSource_DS19(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemSalesPriceCurrentActivePerMaster_ID:
+                this.mapFromDataSource_DS20(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            case #Ledger_ID:
+                this.mapFromDataSource_DS21(_dataSourceCtx, _dataSourceCtx.getBuffer(), _entityCtx.getEntityRecord());
+                break;
+            default :
+                this.doMapDataSourceToEntityExtensions(_entityCtx, _dataSourceCtx);
+                break;
+        }
+    }
+    protected Common doFindDataSource(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx)
+    {
+        Common rtrn = null;
+        switch(_dataSourceCtx.id())
+        {
+            case #InventDistinctProduct_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS1(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #EcoResDistinctProduct_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS2(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #EcoResProductServiceWarranty_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS3(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #EcoResProductSystemLanguage_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS4(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #EcoResProductTranslationToSystemLanguage_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS5(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #InventTableModuleSales_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS6(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #UnitOfMeasure_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS7(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #InventTableModuleInvent_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS8(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #UnitOfMeasureInvent_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS9(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #InventModelGroupItem_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS10(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #InventModelGroup_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS11(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #InventTable_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS12(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #EcoResProductMaster_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS13(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #EcoResProductMasterTranslationToSystemLanguage_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS14(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #WarrantyInventTable_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS15(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #InventDistinctProductDefaultSalesSetup_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS16(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #InventDistinctItemCostPriceCurrentActivePerVariant_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS17(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #InventDistinctItemCostPriceCurrentActivePerMaster_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS18(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #InventDistinctItemSalesPriceCurrentActivePerVariant_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS19(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #InventDistinctItemSalesPriceCurrentActivePerMaster_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS20(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            case #Ledger_ID:
+                rtrn = this.LookForUniqueKeyMatch_DS21(_entityCtx.getEntityRecord(), _dataSourceCtx.getBuffer());
+                break;
+            default :
+                rtrn = this.doFindDataSourceExtensions(_entityCtx, _dataSourceCtx);
+                break;
+        }
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS1(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, ItemNumber)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductConfigurationId)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductColorId)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductSizeId)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductStyleId)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductVersionId)))
+        {
+            return true;
+        }
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventDistinctProduct', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS2(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductNumber)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, ProductType)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, ServiceType)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, IsCatchWeightProduct)))
+        {
+            return true;
+        }
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'EcoResDistinctProduct', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS3(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, WarrantyDurationTime)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, WarrantyDurationTimeUnit)))
+        {
+            return true;
+        }
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'EcoResProductServiceWarranty', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS4(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'EcoResProductSystemLanguage', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS5(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'EcoResProductTranslationToSystemLanguage', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS6(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventTableModuleSales', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS7(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, SalesUnitSymbol)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, SalesUnitDecimalPrecision)))
+        {
+            return true;
+        }
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'UnitOfMeasure', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS8(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventTableModuleInvent', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS9(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, InventoryUnitDecimalPrecision)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, InventoryUnitSymbol)))
+        {
+            return true;
+        }
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'UnitOfMeasureInvent', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS10(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventModelGroupItem', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS11(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, IsStockedProduct)))
+        {
+            return true;
+        }
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventModelGroup', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS12(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventTable', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS13(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'EcoResProductMaster', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS14(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'EcoResProductMasterTranslationToSystemLanguage', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS15(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, WarrantablePriceRangeBaseType)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, LowerWarrantablePriceRangeLimit)))
+        {
+            return true;
+        }
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, UpperWarrantablePriceRangeLimit)))
+        {
+            return true;
+        }
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'WarrantyInventTable', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS16(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventDistinctProductDefaultSalesSetup', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS17(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventDistinctItemCostPriceCurrentActivePerVariant', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS18(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventDistinctItemCostPriceCurrentActivePerMaster', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS19(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventDistinctItemSalesPriceCurrentActivePerVariant', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS20(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'InventDistinctItemSalesPriceCurrentActivePerMaster', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet_DS21(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, str disabledConfigKey = null)
+    {
+        boolean rtrn = false;
+        if(_ecoResReleasedDistinctProductCDSEntity.isFieldSet(fieldnum(EcoResReleasedDistinctProductCDSEntity, CurrencyCode)))
+        {
+            return true;
+        }
+        rtrn = this.isAnyMappedDataSourceExtensionFieldSet(_ecoResReleasedDistinctProductCDSEntity, 'Ledger', disabledConfigKey);
+        return rtrn;
+    }
+    protected boolean isAnyMappedDataSourceFieldSet(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx)
+    {
+        boolean rtrn = false;
+        switch(_dataSourceCtx.id())
+        {
+            case #InventDistinctProduct_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS1(_entityCtx.getEntityRecord());
+                break;
+            case #EcoResDistinctProduct_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS2(_entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductServiceWarranty_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS3(_entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductSystemLanguage_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS4(_entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductTranslationToSystemLanguage_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS5(_entityCtx.getEntityRecord());
+                break;
+            case #InventTableModuleSales_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS6(_entityCtx.getEntityRecord());
+                break;
+            case #UnitOfMeasure_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS7(_entityCtx.getEntityRecord());
+                break;
+            case #InventTableModuleInvent_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS8(_entityCtx.getEntityRecord());
+                break;
+            case #UnitOfMeasureInvent_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS9(_entityCtx.getEntityRecord());
+                break;
+            case #InventModelGroupItem_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS10(_entityCtx.getEntityRecord());
+                break;
+            case #InventModelGroup_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS11(_entityCtx.getEntityRecord());
+                break;
+            case #InventTable_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS12(_entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductMaster_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS13(_entityCtx.getEntityRecord());
+                break;
+            case #EcoResProductMasterTranslationToSystemLanguage_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS14(_entityCtx.getEntityRecord());
+                break;
+            case #WarrantyInventTable_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS15(_entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctProductDefaultSalesSetup_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS16(_entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemCostPriceCurrentActivePerVariant_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS17(_entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemCostPriceCurrentActivePerMaster_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS18(_entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemSalesPriceCurrentActivePerVariant_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS19(_entityCtx.getEntityRecord());
+                break;
+            case #InventDistinctItemSalesPriceCurrentActivePerMaster_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS20(_entityCtx.getEntityRecord());
+                break;
+            case #Ledger_ID:
+                rtrn = this.isAnyMappedDataSourceFieldSet_DS21(_entityCtx.getEntityRecord());
+                break;
+            default :
+                rtrn = this.isAnyMappedDataSourceFieldSet_DSExtensions(_entityCtx, _dataSourceCtx);
+                break;
+        }
+        return rtrn;
+    }
+    private boolean validateDataSource_DS15(DataEntityRuntimeContext _entityCtx, EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, DataEntityDataSourceRuntimeContext _dataSourceCtx, WarrantyInventTable _warrantyInventTable)
+    {
+        boolean rtrn = true;
+        if(isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            rtrn = this.validateMappedDataSourceField(_entityCtx, _dataSourceCtx, '', '', conNull(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, WarrantablePriceRangeBaseType), 'EcoResReleasedDistinctProductCDSEntity.WarrantablePriceRangeBaseType', _warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeBaseType), false/*disallowEditOnCreate*/, false/*disallowEdit*/, true/*callValidateField*/, 1) ? rtrn : false;
+            rtrn = this.validateMappedDataSourceField(_entityCtx, _dataSourceCtx, '', '', conNull(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, LowerWarrantablePriceRangeLimit), 'EcoResReleasedDistinctProductCDSEntity.LowerWarrantablePriceRangeLimit', _warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeMin), false/*disallowEditOnCreate*/, false/*disallowEdit*/, true/*callValidateField*/, 1) ? rtrn : false;
+            rtrn = this.validateMappedDataSourceField(_entityCtx, _dataSourceCtx, '', '', conNull(), _ecoResReleasedDistinctProductCDSEntity, fieldnum(EcoResReleasedDistinctProductCDSEntity, UpperWarrantablePriceRangeLimit), 'EcoResReleasedDistinctProductCDSEntity.UpperWarrantablePriceRangeLimit', _warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeMax), false/*disallowEditOnCreate*/, false/*disallowEdit*/, true/*callValidateField*/, 1) ? rtrn : false;
+            rtrn = this.validateDataSourceExtensions(_entityCtx, _ecoResReleasedDistinctProductCDSEntity, _dataSourceCtx, _warrantyInventTable) ? rtrn : false;
+        }
+        return rtrn;
+    }
+    protected boolean validateDataSource(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx)
+    {
+        boolean rtrn = true;
+        switch(_dataSourceCtx.id())
+        {
+            case #WarrantyInventTable_ID:
+                rtrn = this.validateDataSource_DS15(_entityCtx,_entityCtx.getEntityRecord(),_dataSourceCtx,_dataSourceCtx.getBuffer());
+                break;
+            default :
+                rtrn = this.validateDataSourceExtensions_DSExtensions(_entityCtx, _dataSourceCtx);
+                break;
+        }
+        return rtrn;
+    }
+    private void mapToMatchingRecord_DS1(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctProduct _inventDistinctProduct, InventDistinctProduct _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctProduct, fieldnum(InventDistinctProduct, ItemId), _matchingRecord, fieldnum(InventDistinctProduct, ItemId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctProduct, fieldnum(InventDistinctProduct, configId), _matchingRecord, fieldnum(InventDistinctProduct, configId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctProduct, fieldnum(InventDistinctProduct, InventColorId), _matchingRecord, fieldnum(InventDistinctProduct, InventColorId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctProduct, fieldnum(InventDistinctProduct, InventSizeId), _matchingRecord, fieldnum(InventDistinctProduct, InventSizeId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctProduct, fieldnum(InventDistinctProduct, InventStyleId), _matchingRecord, fieldnum(InventDistinctProduct, InventStyleId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctProduct, fieldnum(InventDistinctProduct, InventVersionId), _matchingRecord, fieldnum(InventDistinctProduct, InventVersionId), 1);
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventDistinctProduct, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctProduct, fieldnum(InventDistinctProduct, Product), _matchingRecord, fieldnum(InventDistinctProduct, Product), 1);
+    }
+    private void mapToMatchingRecord_DS2(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResDistinctProduct _ecoResDistinctProduct, EcoResDistinctProduct _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, DisplayProductNumber), _matchingRecord, fieldnum(EcoResDistinctProduct, DisplayProductNumber), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, ProductType), _matchingRecord, fieldnum(EcoResDistinctProduct, ProductType), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, ServiceType), _matchingRecord, fieldnum(EcoResDistinctProduct, ServiceType), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResDistinctProduct, fieldnum(EcoResDistinctProduct, PdsCWProduct), _matchingRecord, fieldnum(EcoResDistinctProduct, PdsCWProduct), 1);
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _ecoResDistinctProduct, _matchingRecord);
+        if(_ecoResDistinctProduct IS EcoResDistinctProductVariant)
+        {
+            EcoResDistinctProductVariant _ecoResDistinctProductVariant = _ecoResDistinctProduct AS EcoResDistinctProductVariant;
+            EcoResDistinctProductVariant _matchingRecord_ecoResDistinctProductVariant = _matchingRecord AS EcoResDistinctProductVariant;
+            // map data changes in bound fields.
+            this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _ecoResDistinctProductVariant, _matchingRecord_ecoResDistinctProductVariant);
+        }
+    }
+    private void mapToMatchingRecord_DS3(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductServiceWarranty _ecoResProductServiceWarranty, EcoResProductServiceWarranty _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResProductServiceWarranty, fieldnum(EcoResProductServiceWarranty, DurationTime), _matchingRecord, fieldnum(EcoResProductServiceWarranty, DurationTime), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResProductServiceWarranty, fieldnum(EcoResProductServiceWarranty, DurationTimeUnit), _matchingRecord, fieldnum(EcoResProductServiceWarranty, DurationTimeUnit), 1);
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _ecoResProductServiceWarranty, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResProductServiceWarranty, fieldnum(EcoResProductServiceWarranty, DistinctProduct), _matchingRecord, fieldnum(EcoResProductServiceWarranty, DistinctProduct), 1);
+    }
+    private void mapToMatchingRecord_DS4(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductSystemLanguage _ecoResProductSystemLanguage, EcoResProductSystemLanguage _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _ecoResProductSystemLanguage, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResProductSystemLanguage, fieldnum(EcoResProductSystemLanguage, Product), _matchingRecord, fieldnum(EcoResProductSystemLanguage, Product), 1);
+    }
+    private void mapToMatchingRecord_DS5(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductTranslation _ecoResProductTranslationToSystemLanguage, EcoResProductTranslation _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _ecoResProductTranslationToSystemLanguage, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResProductTranslationToSystemLanguage, fieldnum(EcoResProductTranslation, Product), _matchingRecord, fieldnum(EcoResProductTranslation, Product), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResProductTranslationToSystemLanguage, fieldnum(EcoResProductTranslation, LanguageId), _matchingRecord, fieldnum(EcoResProductTranslation, LanguageId), 1);
+    }
+    private void mapToMatchingRecord_DS6(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventTableModule _inventTableModuleSales, InventTableModule _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventTableModuleSales, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventTableModuleSales, fieldnum(InventTableModule, ItemId), _matchingRecord, fieldnum(InventTableModule, ItemId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventTableModuleSales, fieldnum(InventTableModule, UnitId), _matchingRecord, fieldnum(InventTableModule, UnitId), 1);
+    }
+    private void mapToMatchingRecord_DS7(DataEntityDataSourceRuntimeContext _dataSourceCtx, UnitOfMeasure _unitOfMeasure, UnitOfMeasure _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _unitOfMeasure, fieldnum(UnitOfMeasure, Symbol), _matchingRecord, fieldnum(UnitOfMeasure, Symbol), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _unitOfMeasure, fieldnum(UnitOfMeasure, DecimalPrecision), _matchingRecord, fieldnum(UnitOfMeasure, DecimalPrecision), 1);
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _unitOfMeasure, _matchingRecord);
+    }
+    private void mapToMatchingRecord_DS8(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventTableModule _inventTableModuleInvent, InventTableModule _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventTableModuleInvent, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventTableModuleInvent, fieldnum(InventTableModule, ItemId), _matchingRecord, fieldnum(InventTableModule, ItemId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventTableModuleInvent, fieldnum(InventTableModule, UnitId), _matchingRecord, fieldnum(InventTableModule, UnitId), 1);
+    }
+    private void mapToMatchingRecord_DS9(DataEntityDataSourceRuntimeContext _dataSourceCtx, UnitOfMeasure _unitOfMeasureInvent, UnitOfMeasure _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _unitOfMeasureInvent, fieldnum(UnitOfMeasure, DecimalPrecision), _matchingRecord, fieldnum(UnitOfMeasure, DecimalPrecision), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _unitOfMeasureInvent, fieldnum(UnitOfMeasure, Symbol), _matchingRecord, fieldnum(UnitOfMeasure, Symbol), 1);
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _unitOfMeasureInvent, _matchingRecord);
+    }
+    private void mapToMatchingRecord_DS10(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventModelGroupItem _inventModelGroupItem, InventModelGroupItem _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventModelGroupItem, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventModelGroupItem, fieldnum(InventModelGroupItem, ItemDataAreaId), _matchingRecord, fieldnum(InventModelGroupItem, ItemDataAreaId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventModelGroupItem, fieldnum(InventModelGroupItem, ItemId), _matchingRecord, fieldnum(InventModelGroupItem, ItemId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventModelGroupItem, fieldnum(InventModelGroupItem, ModelGroupDataAreaId), _matchingRecord, fieldnum(InventModelGroupItem, ModelGroupDataAreaId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventModelGroupItem, fieldnum(InventModelGroupItem, ModelGroupId), _matchingRecord, fieldnum(InventModelGroupItem, ModelGroupId), 1);
+    }
+    private void mapToMatchingRecord_DS11(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventModelGroup _inventModelGroup, InventModelGroup _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventModelGroup, fieldnum(InventModelGroup, StockedProduct), _matchingRecord, fieldnum(InventModelGroup, StockedProduct), 1);
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventModelGroup, _matchingRecord);
+    }
+    private void mapToMatchingRecord_DS12(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventTable _inventTable, InventTable _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventTable, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventTable, fieldnum(InventTable, Product), _matchingRecord, fieldnum(InventTable, Product), 1);
+    }
+    private void mapToMatchingRecord_DS13(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductMaster _ecoResProductMaster, EcoResProductMaster _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _ecoResProductMaster, _matchingRecord);
+    }
+    private void mapToMatchingRecord_DS14(DataEntityDataSourceRuntimeContext _dataSourceCtx, EcoResProductTranslation _ecoResProductMasterTranslationToSystemLanguage, EcoResProductTranslation _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _ecoResProductMasterTranslationToSystemLanguage, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResProductMasterTranslationToSystemLanguage, fieldnum(EcoResProductTranslation, Product), _matchingRecord, fieldnum(EcoResProductTranslation, Product), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ecoResProductMasterTranslationToSystemLanguage, fieldnum(EcoResProductTranslation, LanguageId), _matchingRecord, fieldnum(EcoResProductTranslation, LanguageId), 1);
+    }
+    private void mapToMatchingRecord_DS15(DataEntityDataSourceRuntimeContext _dataSourceCtx, WarrantyInventTable _warrantyInventTable, WarrantyInventTable _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeBaseType), _matchingRecord, fieldnum(WarrantyInventTable, ApplicablePriceRangeBaseType), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeMin), _matchingRecord, fieldnum(WarrantyInventTable, ApplicablePriceRangeMin), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _warrantyInventTable, fieldnum(WarrantyInventTable, ApplicablePriceRangeMax), _matchingRecord, fieldnum(WarrantyInventTable, ApplicablePriceRangeMax), 1);
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _warrantyInventTable, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _warrantyInventTable, fieldnum(WarrantyInventTable, ItemId), _matchingRecord, fieldnum(WarrantyInventTable, ItemId), 1);
+    }
+    private void mapToMatchingRecord_DS16(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctProductDefaultSalesSetup _inventDistinctProductDefaultSalesSetup, InventDistinctProductDefaultSalesSetup _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventDistinctProductDefaultSalesSetup, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctProductDefaultSalesSetup, fieldnum(InventDistinctProductDefaultSalesSetup, DistinctProduct), _matchingRecord, fieldnum(InventDistinctProductDefaultSalesSetup, DistinctProduct), 1);
+    }
+    private void mapToMatchingRecord_DS17(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemCostPriceCurrentActivePerVariant, InventDistinctItemPriceCurrentActivePerSite _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventDistinctItemCostPriceCurrentActivePerVariant, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemCostPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, Product), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, Product), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemCostPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSizeId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSizeId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemCostPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventStyleId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventStyleId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemCostPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventVersionId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventVersionId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemCostPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventColorId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventColorId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemCostPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceConfigId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceConfigId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemCostPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSiteId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSiteId), 1);
+    }
+    private void mapToMatchingRecord_DS18(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemCostPriceCurrentActivePerMaster, InventDistinctItemPriceCurrentActivePerSite _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventDistinctItemCostPriceCurrentActivePerMaster, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemCostPriceCurrentActivePerMaster, fieldnum(InventDistinctItemPriceCurrentActivePerSite, Product), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, Product), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemCostPriceCurrentActivePerMaster, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSiteId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSiteId), 1);
+    }
+    private void mapToMatchingRecord_DS19(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemSalesPriceCurrentActivePerVariant, InventDistinctItemPriceCurrentActivePerSite _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventDistinctItemSalesPriceCurrentActivePerVariant, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemSalesPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, Product), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, Product), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemSalesPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSizeId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSizeId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemSalesPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventStyleId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventStyleId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemSalesPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventVersionId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventVersionId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemSalesPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventColorId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventColorId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemSalesPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceConfigId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceConfigId), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemSalesPriceCurrentActivePerVariant, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSiteId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSiteId), 1);
+    }
+    private void mapToMatchingRecord_DS20(DataEntityDataSourceRuntimeContext _dataSourceCtx, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemSalesPriceCurrentActivePerMaster, InventDistinctItemPriceCurrentActivePerSite _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _inventDistinctItemSalesPriceCurrentActivePerMaster, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemSalesPriceCurrentActivePerMaster, fieldnum(InventDistinctItemPriceCurrentActivePerSite, Product), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, Product), 1);
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _inventDistinctItemSalesPriceCurrentActivePerMaster, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSiteId), _matchingRecord, fieldnum(InventDistinctItemPriceCurrentActivePerSite, ItemPriceInventSiteId), 1);
+    }
+    private void mapToMatchingRecord_DS21(DataEntityDataSourceRuntimeContext _dataSourceCtx, Ledger _ledger, Ledger _matchingRecord)
+    {
+        // map data changes in bound fields.
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ledger, fieldnum(Ledger, AccountingCurrency), _matchingRecord, fieldnum(Ledger, AccountingCurrency), 1);
+        this.mapToMatchingRecordExtensions(_dataSourceCtx, tablestr(EcoResReleasedDistinctProductCDSEntity), _ledger, _matchingRecord);
+        // map data changes in unbound FK fields
+        this.mapEntityFieldToDataSourceField(_dataSourceCtx.getDatabaseOperation(), _ledger, fieldnum(Ledger, Name), _matchingRecord, fieldnum(Ledger, Name), 1);
+    }
+    protected void mapDataSourceToMatchingRecord(DataEntityDataSourceRuntimeContext _dataSourceCtx, Common _matchingRecord)
+    {
+        switch(_dataSourceCtx.id())
+        {
+            case #InventDistinctProduct_ID:
+                this.mapToMatchingRecord_DS1(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #EcoResDistinctProduct_ID:
+                this.mapToMatchingRecord_DS2(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #EcoResProductServiceWarranty_ID:
+                this.mapToMatchingRecord_DS3(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #EcoResProductSystemLanguage_ID:
+                this.mapToMatchingRecord_DS4(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #EcoResProductTranslationToSystemLanguage_ID:
+                this.mapToMatchingRecord_DS5(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #InventTableModuleSales_ID:
+                this.mapToMatchingRecord_DS6(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #UnitOfMeasure_ID:
+                this.mapToMatchingRecord_DS7(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #InventTableModuleInvent_ID:
+                this.mapToMatchingRecord_DS8(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #UnitOfMeasureInvent_ID:
+                this.mapToMatchingRecord_DS9(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #InventModelGroupItem_ID:
+                this.mapToMatchingRecord_DS10(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #InventModelGroup_ID:
+                this.mapToMatchingRecord_DS11(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #InventTable_ID:
+                this.mapToMatchingRecord_DS12(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #EcoResProductMaster_ID:
+                this.mapToMatchingRecord_DS13(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #EcoResProductMasterTranslationToSystemLanguage_ID:
+                this.mapToMatchingRecord_DS14(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #WarrantyInventTable_ID:
+                this.mapToMatchingRecord_DS15(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #InventDistinctProductDefaultSalesSetup_ID:
+                this.mapToMatchingRecord_DS16(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #InventDistinctItemCostPriceCurrentActivePerVariant_ID:
+                this.mapToMatchingRecord_DS17(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #InventDistinctItemCostPriceCurrentActivePerMaster_ID:
+                this.mapToMatchingRecord_DS18(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #InventDistinctItemSalesPriceCurrentActivePerVariant_ID:
+                this.mapToMatchingRecord_DS19(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #InventDistinctItemSalesPriceCurrentActivePerMaster_ID:
+                this.mapToMatchingRecord_DS20(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            case #Ledger_ID:
+                this.mapToMatchingRecord_DS21(_dataSourceCtx, _dataSourceCtx.getBuffer(), _matchingRecord);
+                break;
+            default :
+                this.mapDataSourceToMatchingRecordExtensions(_dataSourceCtx, _matchingRecord);
+                break;
+        }
+    }
+    private boolean isDataSourceConfigKeyEnabled_DS2()
+    {
+        boolean rtrn = true;
+        // Ensure that all base tables for this data source have enabled configuration keys
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            return false;
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            return false;
+        }
+        return rtrn;
+    }
+    private boolean isDataSourceConfigKeyEnabled_DS13()
+    {
+        boolean rtrn = true;
+        // Ensure that all base tables for this data source have enabled configuration keys
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            return false;
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            return false;
+        }
+        return rtrn;
+    }
+    protected void validateConfigurationKeys(DataEntityRuntimeContext _entityCtx)
+    {
+        // Ensure that the entity configuration key is enabled
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('CDSIntegration')))
+        {
+            // Entity configuration key is disabled
+            throw error(strfmt("@ApplicationPlatform:DataEntityConfigKeyDisabled",'CDSIntegration'));
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            // Root data source configuration key is disabled
+            throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'InventDistinctProduct','LogisticsBasic'));
+        }
+        if(!this.isDataSourceConfigKeyEnabled_DS2())
+        {
+            // Inner joined data source configuration key is disabled
+            throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyListDisabled",'EcoResDistinctProduct','LogisticsBasic,LogisticsBasic'));
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            if(this.isAnyMappedDataSourceFieldSet_DS3(_entityCtx.getEntityRecord(), 'LogisticsBasic'))
+            {
+                // Outer joined data source configuration key is disabled and fields mapped to this data source are set
+                throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'EcoResProductServiceWarranty','LogisticsBasic'));
+            }
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            if(this.isAnyMappedDataSourceFieldSet_DS5(_entityCtx.getEntityRecord(), 'LogisticsBasic'))
+            {
+                // Outer joined data source configuration key is disabled and fields mapped to this data source are set
+                throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'EcoResProductTranslationToSystemLanguage','LogisticsBasic'));
+            }
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            if(this.isAnyMappedDataSourceFieldSet_DS6(_entityCtx.getEntityRecord(), 'LogisticsBasic'))
+            {
+                // Outer joined data source configuration key is disabled and fields mapped to this data source are set
+                throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'InventTableModuleSales','LogisticsBasic'));
+            }
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            if(this.isAnyMappedDataSourceFieldSet_DS8(_entityCtx.getEntityRecord(), 'LogisticsBasic'))
+            {
+                // Outer joined data source configuration key is disabled and fields mapped to this data source are set
+                throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'InventTableModuleInvent','LogisticsBasic'));
+            }
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            if(this.isAnyMappedDataSourceFieldSet_DS10(_entityCtx.getEntityRecord(), 'LogisticsBasic'))
+            {
+                // Outer joined data source configuration key is disabled and fields mapped to this data source are set
+                throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'InventModelGroupItem','LogisticsBasic'));
+            }
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            if(this.isAnyMappedDataSourceFieldSet_DS11(_entityCtx.getEntityRecord(), 'LogisticsBasic'))
+            {
+                // Outer joined data source configuration key is disabled and fields mapped to this data source are set
+                throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'InventModelGroup','LogisticsBasic'));
+            }
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            // Inner joined data source configuration key is disabled
+            throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'InventTable','LogisticsBasic'));
+        }
+        if(!this.isDataSourceConfigKeyEnabled_DS13())
+        {
+            if(this.isAnyMappedDataSourceFieldSet_DS13(_entityCtx.getEntityRecord(), 'LogisticsBasic,LogisticsBasic'))
+            {
+                // Outer joined data source configuration key is disabled and fields mapped to this data source are set
+                throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyListDisabled",'EcoResProductMaster','LogisticsBasic,LogisticsBasic'));
+            }
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            if(this.isAnyMappedDataSourceFieldSet_DS14(_entityCtx.getEntityRecord(), 'LogisticsBasic'))
+            {
+                // Outer joined data source configuration key is disabled and fields mapped to this data source are set
+                throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'EcoResProductMasterTranslationToSystemLanguage','LogisticsBasic'));
+            }
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            if(this.isAnyMappedDataSourceFieldSet_DS15(_entityCtx.getEntityRecord(), 'LogisticsBasic'))
+            {
+                // Outer joined data source configuration key is disabled and fields mapped to this data source are set
+                throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'WarrantyInventTable','LogisticsBasic'));
+            }
+        }
+        if(!isConfigurationKeyEnabled(configurationKeyName2Id('LogisticsBasic')))
+        {
+            if(this.isAnyMappedDataSourceFieldSet_DS16(_entityCtx.getEntityRecord(), 'LogisticsBasic'))
+            {
+                // Outer joined data source configuration key is disabled and fields mapped to this data source are set
+                throw error(strfmt("@ApplicationPlatform:DataEntityDataSourceConfigKeyDisabled",'InventDistinctProductDefaultSalesSetup','LogisticsBasic'));
+            }
+        }
+    }
+    protected boolean hasDataSourceRecordChanged(int _dataSourceId, common _originalRecord, common _updatedRecord)
+    {
+        boolean hasDataSourceRecordChanged_ = true;
+        
+        // The method is called for OCC validation and only upon data sources that have One-to-Many relationships.
+        
+        switch (_dataSourceId)
+        {
+            case #InventDistinctProduct_ID:
+                hasDataSourceRecordChanged_ = this.hasDataSourceRecordChanged_DS1(_originalRecord, _updatedRecord);
+                break;
+            case #EcoResDistinctProduct_ID:
+                hasDataSourceRecordChanged_ = this.hasDataSourceRecordChanged_DS2(_originalRecord, _updatedRecord);
+                break;
+            case #EcoResProductServiceWarranty_ID:
+                hasDataSourceRecordChanged_ = this.hasDataSourceRecordChanged_DS3(_originalRecord, _updatedRecord);
+                break;
+            case #UnitOfMeasure_ID:
+                hasDataSourceRecordChanged_ = this.hasDataSourceRecordChanged_DS7(_originalRecord, _updatedRecord);
+                break;
+            case #UnitOfMeasureInvent_ID:
+                hasDataSourceRecordChanged_ = this.hasDataSourceRecordChanged_DS9(_originalRecord, _updatedRecord);
+                break;
+            case #InventModelGroup_ID:
+                hasDataSourceRecordChanged_ = this.hasDataSourceRecordChanged_DS11(_originalRecord, _updatedRecord);
+                break;
+            case #WarrantyInventTable_ID:
+                hasDataSourceRecordChanged_ = this.hasDataSourceRecordChanged_DS15(_originalRecord, _updatedRecord);
+                break;
+            case #Ledger_ID:
+                hasDataSourceRecordChanged_ = this.hasDataSourceRecordChanged_DS21(_originalRecord, _updatedRecord);
+                break;
+        }
+        return hasDataSourceRecordChanged_;
+    }
+    protected void initializeDataSources(DataEntityRuntimeContext _entityCtx)
+    {
+        this.initializeDataSource(_entityCtx, 'InventDistinctProduct', m_InventDistinctProduct, this.getDataSourceId('InventDistinctProduct'), this.getDataSourceRuntimeId('InventDistinctProduct'), false/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'EcoResDistinctProduct', m_EcoResDistinctProduct, this.getDataSourceId('EcoResDistinctProduct'), this.getDataSourceRuntimeId('EcoResDistinctProduct'), false/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'EcoResProductServiceWarranty', m_EcoResProductServiceWarranty, this.getDataSourceId('EcoResProductServiceWarranty'), this.getDataSourceRuntimeId('EcoResProductServiceWarranty'), true/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'EcoResProductSystemLanguage', m_EcoResProductSystemLanguage, this.getDataSourceId('EcoResProductSystemLanguage'), this.getDataSourceRuntimeId('EcoResProductSystemLanguage'), true/* optional */, true/* readonly */, false/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'EcoResProductTranslationToSystemLanguage', m_EcoResProductTranslationToSystemLanguage, this.getDataSourceId('EcoResProductTranslationToSystemLanguage'), this.getDataSourceRuntimeId('EcoResProductTranslationToSystemLanguage'), true/* optional */, true/* readonly */, false/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'InventTableModuleSales', m_InventTableModuleSales, this.getDataSourceId('InventTableModuleSales'), this.getDataSourceRuntimeId('InventTableModuleSales'), true/* optional */, true/* readonly */, false/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'UnitOfMeasure', m_UnitOfMeasure, this.getDataSourceId('UnitOfMeasure'), this.getDataSourceRuntimeId('UnitOfMeasure'), true/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'InventTableModuleInvent', m_InventTableModuleInvent, this.getDataSourceId('InventTableModuleInvent'), this.getDataSourceRuntimeId('InventTableModuleInvent'), true/* optional */, true/* readonly */, false/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'UnitOfMeasureInvent', m_UnitOfMeasureInvent, this.getDataSourceId('UnitOfMeasureInvent'), this.getDataSourceRuntimeId('UnitOfMeasureInvent'), true/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'InventModelGroupItem', m_InventModelGroupItem, this.getDataSourceId('InventModelGroupItem'), this.getDataSourceRuntimeId('InventModelGroupItem'), true/* optional */, true/* readonly */, false/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'InventModelGroup', m_InventModelGroup, this.getDataSourceId('InventModelGroup'), this.getDataSourceRuntimeId('InventModelGroup'), true/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'InventTable', m_InventTable, this.getDataSourceId('InventTable'), this.getDataSourceRuntimeId('InventTable'), false/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'EcoResProductMaster', m_EcoResProductMaster, this.getDataSourceId('EcoResProductMaster'), this.getDataSourceRuntimeId('EcoResProductMaster'), true/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'EcoResProductMasterTranslationToSystemLanguage', m_EcoResProductMasterTranslationToSystemLanguage, this.getDataSourceId('EcoResProductMasterTranslationToSystemLanguage'), this.getDataSourceRuntimeId('EcoResProductMasterTranslationToSystemLanguage'), true/* optional */, true/* readonly */, false/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'WarrantyInventTable', m_WarrantyInventTable, this.getDataSourceId('WarrantyInventTable'), this.getDataSourceRuntimeId('WarrantyInventTable'), true/* optional */, false/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'InventDistinctProductDefaultSalesSetup', m_InventDistinctProductDefaultSalesSetup, this.getDataSourceId('InventDistinctProductDefaultSalesSetup'), this.getDataSourceRuntimeId('InventDistinctProductDefaultSalesSetup'), true/* optional */, true/* readonly */, false/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'InventDistinctItemCostPriceCurrentActivePerVariant', m_InventDistinctItemCostPriceCurrentActivePerVariant, this.getDataSourceId('InventDistinctItemCostPriceCurrentActivePerVariant'), this.getDataSourceRuntimeId('InventDistinctItemCostPriceCurrentActivePerVariant'), true/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'InventDistinctItemCostPriceCurrentActivePerMaster', m_InventDistinctItemCostPriceCurrentActivePerMaster, this.getDataSourceId('InventDistinctItemCostPriceCurrentActivePerMaster'), this.getDataSourceRuntimeId('InventDistinctItemCostPriceCurrentActivePerMaster'), true/* optional */, true/* readonly */, false/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'InventDistinctItemSalesPriceCurrentActivePerVariant', m_InventDistinctItemSalesPriceCurrentActivePerVariant, this.getDataSourceId('InventDistinctItemSalesPriceCurrentActivePerVariant'), this.getDataSourceRuntimeId('InventDistinctItemSalesPriceCurrentActivePerVariant'), true/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'InventDistinctItemSalesPriceCurrentActivePerMaster', m_InventDistinctItemSalesPriceCurrentActivePerMaster, this.getDataSourceId('InventDistinctItemSalesPriceCurrentActivePerMaster'), this.getDataSourceRuntimeId('InventDistinctItemSalesPriceCurrentActivePerMaster'), true/* optional */, true/* readonly */, false/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSource(_entityCtx, 'Ledger', m_Ledger, this.getDataSourceId('Ledger'), this.getDataSourceRuntimeId('Ledger'), false/* optional */, true/* readonly */, true/* oneToMany */, false/* dateEffective */, false/* applyDateFilter */);
+        this.initializeDataSourcesExtensions(_entityCtx);
+    }
+    private boolean hasDataSourceRecordChanged_DS1(InventDistinctProduct _originalRecord, InventDistinctProduct _updatedRecord)
+    {
+        if (_originalRecord.ItemId != _updatedRecord.ItemId)
+        {
+            return true;
+        }
+        if (_originalRecord.configId != _updatedRecord.configId)
+        {
+            return true;
+        }
+        if (_originalRecord.InventColorId != _updatedRecord.InventColorId)
+        {
+            return true;
+        }
+        if (_originalRecord.InventSizeId != _updatedRecord.InventSizeId)
+        {
+            return true;
+        }
+        if (_originalRecord.InventStyleId != _updatedRecord.InventStyleId)
+        {
+            return true;
+        }
+        if (_originalRecord.InventVersionId != _updatedRecord.InventVersionId)
+        {
+            return true;
+        }
+        return false;
+    }
+    private boolean hasDataSourceRecordChanged_DS11(InventModelGroup _originalRecord, InventModelGroup _updatedRecord)
+    {
+        if (_originalRecord.StockedProduct != _updatedRecord.StockedProduct)
+        {
+            return true;
+        }
+        return false;
+    }
+    private boolean hasDataSourceRecordChanged_DS15(WarrantyInventTable _originalRecord, WarrantyInventTable _updatedRecord)
+    {
+        if (_originalRecord.ApplicablePriceRangeBaseType != _updatedRecord.ApplicablePriceRangeBaseType)
+        {
+            return true;
+        }
+        if (_originalRecord.ApplicablePriceRangeMin != _updatedRecord.ApplicablePriceRangeMin)
+        {
+            return true;
+        }
+        if (_originalRecord.ApplicablePriceRangeMax != _updatedRecord.ApplicablePriceRangeMax)
+        {
+            return true;
+        }
+        return false;
+    }
+    private boolean hasDataSourceRecordChanged_DS2(EcoResDistinctProduct _originalRecord, EcoResDistinctProduct _updatedRecord)
+    {
+        if (_originalRecord.DisplayProductNumber != _updatedRecord.DisplayProductNumber)
+        {
+            return true;
+        }
+        if (_originalRecord.ProductType != _updatedRecord.ProductType)
+        {
+            return true;
+        }
+        if (_originalRecord.ServiceType != _updatedRecord.ServiceType)
+        {
+            return true;
+        }
+        if (_originalRecord.PdsCWProduct != _updatedRecord.PdsCWProduct)
+        {
+            return true;
+        }
+        return false;
+    }
+    private boolean hasDataSourceRecordChanged_DS21(Ledger _originalRecord, Ledger _updatedRecord)
+    {
+        if (_originalRecord.AccountingCurrency != _updatedRecord.AccountingCurrency)
+        {
+            return true;
+        }
+        return false;
+    }
+    private boolean hasDataSourceRecordChanged_DS3(EcoResProductServiceWarranty _originalRecord, EcoResProductServiceWarranty _updatedRecord)
+    {
+        if (_originalRecord.DurationTime != _updatedRecord.DurationTime)
+        {
+            return true;
+        }
+        if (_originalRecord.DurationTimeUnit != _updatedRecord.DurationTimeUnit)
+        {
+            return true;
+        }
+        return false;
+    }
+    private boolean hasDataSourceRecordChanged_DS7(UnitOfMeasure _originalRecord, UnitOfMeasure _updatedRecord)
+    {
+        if (_originalRecord.Symbol != _updatedRecord.Symbol)
+        {
+            return true;
+        }
+        if (_originalRecord.DecimalPrecision != _updatedRecord.DecimalPrecision)
+        {
+            return true;
+        }
+        return false;
+    }
+    private boolean hasDataSourceRecordChanged_DS9(UnitOfMeasure _originalRecord, UnitOfMeasure _updatedRecord)
+    {
+        if (_originalRecord.DecimalPrecision != _updatedRecord.DecimalPrecision)
+        {
+            return true;
+        }
+        if (_originalRecord.Symbol != _updatedRecord.Symbol)
+        {
+            return true;
+        }
+        return false;
+    }
+    private InventDistinctProduct LookForUniqueKeyMatch_DS1(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventDistinctProduct _inventDistinctProduct)
+    {
+        InventDistinctProduct inventDistinctProduct_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventDistinctProduct_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                ItemId, configId, InventColorId, InventSizeId, InventStyleId, InventVersionId, Product, DataAreaId, RecId, InventDimId
+            from
+                inventDistinctProduct_
+        where
+            inventDistinctProduct_.ItemId == _inventDistinctProduct.ItemId && inventDistinctProduct_.InventDimId == _inventDistinctProduct.InventDimId
+        ;
+        
+        if (inventDistinctProduct_)
+        {
+            return inventDistinctProduct_;
+        }
+        
+        return inventDistinctProduct_;
+    }
+    private InventModelGroupItem LookForUniqueKeyMatch_DS10(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventModelGroupItem _inventModelGroupItem)
+    {
+        InventModelGroupItem inventModelGroupItem_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventModelGroupItem_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                ItemId, ItemDataAreaId
+            from
+                inventModelGroupItem_
+        where
+            inventModelGroupItem_.ItemId == _inventModelGroupItem.ItemId && inventModelGroupItem_.ItemDataAreaId == _inventModelGroupItem.ItemDataAreaId
+        ;
+        
+        if (inventModelGroupItem_)
+        {
+            return inventModelGroupItem_;
+        }
+        
+        return inventModelGroupItem_;
+    }
+    private InventModelGroup LookForUniqueKeyMatch_DS11(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventModelGroup _inventModelGroup)
+    {
+        InventModelGroup inventModelGroup_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventModelGroup_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                StockedProduct, DataAreaId, ModelGroupId
+            from
+                inventModelGroup_
+        where
+            inventModelGroup_.RecId == _inventModelGroup.RecId
+        ;
+        
+        if (inventModelGroup_)
+        {
+            return inventModelGroup_;
+        }
+        
+        return inventModelGroup_;
+    }
+    private InventTable LookForUniqueKeyMatch_DS12(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventTable _inventTable)
+    {
+        InventTable inventTable_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventTable_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                ItemId, Product, DataAreaId
+            from
+                inventTable_
+        where
+            inventTable_.ItemId == _inventTable.ItemId
+        ;
+        
+        if (inventTable_)
+        {
+            return inventTable_;
+        }
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                ItemId, Product, DataAreaId
+            from
+                inventTable_
+        where
+            inventTable_.Product == _inventTable.Product && inventTable_.DataAreaId == _inventTable.DataAreaId
+        ;
+        
+        if (inventTable_)
+        {
+            return inventTable_;
+        }
+        
+        return inventTable_;
+    }
+    private EcoResProductMaster LookForUniqueKeyMatch_DS13(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, EcoResProductMaster _ecoResProductMaster)
+    {
+        EcoResProductMaster ecoResProductMaster_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        ecoResProductMaster_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                RecId, DisplayProductNumber, ServiceType
+            from
+                ecoResProductMaster_
+        where
+            ecoResProductMaster_.DisplayProductNumber == _ecoResProductMaster.DisplayProductNumber
+        ;
+        
+        if (ecoResProductMaster_)
+        {
+            return ecoResProductMaster_;
+        }
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                RecId, DisplayProductNumber, ServiceType
+            from
+                ecoResProductMaster_
+        where
+            ecoResProductMaster_.RecId == _ecoResProductMaster.RecId && ecoResProductMaster_.ServiceType == _ecoResProductMaster.ServiceType
+        ;
+        
+        if (ecoResProductMaster_)
+        {
+            return ecoResProductMaster_;
+        }
+        
+        return ecoResProductMaster_;
+    }
+    private EcoResProductTranslation LookForUniqueKeyMatch_DS14(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, EcoResProductTranslation _ecoResProductMasterTranslationToSystemLanguage)
+    {
+        EcoResProductTranslation ecoResProductTranslation_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        ecoResProductTranslation_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                Product, LanguageId, RecId
+            from
+                ecoResProductTranslation_
+        where
+            ecoResProductTranslation_.Product == _ecoResProductMasterTranslationToSystemLanguage.Product && ecoResProductTranslation_.LanguageId == _ecoResProductMasterTranslationToSystemLanguage.LanguageId
+        ;
+        
+        if (ecoResProductTranslation_)
+        {
+            return ecoResProductTranslation_;
+        }
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                Product, LanguageId, RecId
+            from
+                ecoResProductTranslation_
+        where
+            ecoResProductTranslation_.RecId == _ecoResProductMasterTranslationToSystemLanguage.RecId && ecoResProductTranslation_.Product == _ecoResProductMasterTranslationToSystemLanguage.Product && ecoResProductTranslation_.LanguageId == _ecoResProductMasterTranslationToSystemLanguage.LanguageId
+        ;
+        
+        if (ecoResProductTranslation_)
+        {
+            return ecoResProductTranslation_;
+        }
+        
+        return ecoResProductTranslation_;
+    }
+    private WarrantyInventTable LookForUniqueKeyMatch_DS15(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, WarrantyInventTable _warrantyInventTable)
+    {
+        WarrantyInventTable warrantyInventTable_ = null;
+        
+        select
+            forUpdate
+            firstOnly
+                warrantyInventTable_
+        where
+            warrantyInventTable_.ItemId == _warrantyInventTable.ItemId
+        ;
+        
+        if (warrantyInventTable_)
+        {
+            return warrantyInventTable_;
+        }
+        
+        return warrantyInventTable_;
+    }
+    private InventDistinctProductDefaultSalesSetup LookForUniqueKeyMatch_DS16(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventDistinctProductDefaultSalesSetup _inventDistinctProductDefaultSalesSetup)
+    {
+        InventDistinctProductDefaultSalesSetup inventDistinctProductDefaultSalesSetup_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventDistinctProductDefaultSalesSetup_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                DefaultSalesSiteId, DistinctProduct
+            from
+                inventDistinctProductDefaultSalesSetup_
+        where
+            inventDistinctProductDefaultSalesSetup_.DistinctProduct == _inventDistinctProductDefaultSalesSetup.DistinctProduct
+        ;
+        
+        if (inventDistinctProductDefaultSalesSetup_)
+        {
+            return inventDistinctProductDefaultSalesSetup_;
+        }
+        
+        return inventDistinctProductDefaultSalesSetup_;
+    }
+    private InventDistinctItemPriceCurrentActivePerSite LookForUniqueKeyMatch_DS17(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemCostPriceCurrentActivePerVariant)
+    {
+        InventDistinctItemPriceCurrentActivePerSite inventDistinctItemPriceCurrentActivePerSite_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventDistinctItemPriceCurrentActivePerSite_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                inventDistinctItemPriceCurrentActivePerSite_
+        where
+            inventDistinctItemPriceCurrentActivePerSite_.RecId == _inventDistinctItemCostPriceCurrentActivePerVariant.RecId
+        ;
+        
+        if (inventDistinctItemPriceCurrentActivePerSite_)
+        {
+            return inventDistinctItemPriceCurrentActivePerSite_;
+        }
+        
+        return inventDistinctItemPriceCurrentActivePerSite_;
+    }
+    private InventDistinctItemPriceCurrentActivePerSite LookForUniqueKeyMatch_DS18(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemCostPriceCurrentActivePerMaster)
+    {
+        InventDistinctItemPriceCurrentActivePerSite inventDistinctItemPriceCurrentActivePerSite_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventDistinctItemPriceCurrentActivePerSite_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                inventDistinctItemPriceCurrentActivePerSite_
+        where
+            inventDistinctItemPriceCurrentActivePerSite_.RecId == _inventDistinctItemCostPriceCurrentActivePerMaster.RecId
+        ;
+        
+        if (inventDistinctItemPriceCurrentActivePerSite_)
+        {
+            return inventDistinctItemPriceCurrentActivePerSite_;
+        }
+        
+        return inventDistinctItemPriceCurrentActivePerSite_;
+    }
+    private InventDistinctItemPriceCurrentActivePerSite LookForUniqueKeyMatch_DS19(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemSalesPriceCurrentActivePerVariant)
+    {
+        InventDistinctItemPriceCurrentActivePerSite inventDistinctItemPriceCurrentActivePerSite_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventDistinctItemPriceCurrentActivePerSite_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                inventDistinctItemPriceCurrentActivePerSite_
+        where
+            inventDistinctItemPriceCurrentActivePerSite_.RecId == _inventDistinctItemSalesPriceCurrentActivePerVariant.RecId
+        ;
+        
+        if (inventDistinctItemPriceCurrentActivePerSite_)
+        {
+            return inventDistinctItemPriceCurrentActivePerSite_;
+        }
+        
+        return inventDistinctItemPriceCurrentActivePerSite_;
+    }
+    private EcoResDistinctProduct LookForUniqueKeyMatch_DS2(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, EcoResDistinctProduct _ecoResDistinctProduct)
+    {
+        EcoResDistinctProduct ecoResDistinctProduct_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        ecoResDistinctProduct_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                DisplayProductNumber, ProductType, ServiceType, PdsCWProduct, RecId
+            from
+                ecoResDistinctProduct_
+        where
+            ecoResDistinctProduct_.DisplayProductNumber == _ecoResDistinctProduct.DisplayProductNumber
+        ;
+        
+        if (ecoResDistinctProduct_)
+        {
+            return ecoResDistinctProduct_;
+        }
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                DisplayProductNumber, ProductType, ServiceType, PdsCWProduct, RecId
+            from
+                ecoResDistinctProduct_
+        where
+            ecoResDistinctProduct_.RecId == _ecoResDistinctProduct.RecId && ecoResDistinctProduct_.ServiceType == _ecoResDistinctProduct.ServiceType
+        ;
+        
+        if (ecoResDistinctProduct_)
+        {
+            return ecoResDistinctProduct_;
+        }
+        
+        return ecoResDistinctProduct_;
+    }
+    private InventDistinctItemPriceCurrentActivePerSite LookForUniqueKeyMatch_DS20(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemSalesPriceCurrentActivePerMaster)
+    {
+        InventDistinctItemPriceCurrentActivePerSite inventDistinctItemPriceCurrentActivePerSite_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventDistinctItemPriceCurrentActivePerSite_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                inventDistinctItemPriceCurrentActivePerSite_
+        where
+            inventDistinctItemPriceCurrentActivePerSite_.RecId == _inventDistinctItemSalesPriceCurrentActivePerMaster.RecId
+        ;
+        
+        if (inventDistinctItemPriceCurrentActivePerSite_)
+        {
+            return inventDistinctItemPriceCurrentActivePerSite_;
+        }
+        
+        return inventDistinctItemPriceCurrentActivePerSite_;
+    }
+    private Ledger LookForUniqueKeyMatch_DS21(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, Ledger _ledger)
+    {
+        Ledger ledger_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        ledger_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                AccountingCurrency
+            from
+                ledger_
+        where
+            ledger_.RecId == _ledger.RecId
+        ;
+        
+        if (ledger_)
+        {
+            return ledger_;
+        }
+        
+        return ledger_;
+    }
+    private EcoResProductServiceWarranty LookForUniqueKeyMatch_DS3(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, EcoResProductServiceWarranty _ecoResProductServiceWarranty)
+    {
+        EcoResProductServiceWarranty ecoResProductServiceWarranty_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        ecoResProductServiceWarranty_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                DurationTime, DurationTimeUnit
+            from
+                ecoResProductServiceWarranty_
+        where
+            ecoResProductServiceWarranty_.RecId == _ecoResProductServiceWarranty.RecId
+        ;
+        
+        if (ecoResProductServiceWarranty_)
+        {
+            return ecoResProductServiceWarranty_;
+        }
+        
+        return ecoResProductServiceWarranty_;
+    }
+    private EcoResProductSystemLanguage LookForUniqueKeyMatch_DS4(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, EcoResProductSystemLanguage _ecoResProductSystemLanguage)
+    {
+        EcoResProductSystemLanguage ecoResProductSystemLanguage_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        ecoResProductSystemLanguage_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                SystemLanguageId
+            from
+                ecoResProductSystemLanguage_
+        where
+            ecoResProductSystemLanguage_.RecId == _ecoResProductSystemLanguage.RecId
+        ;
+        
+        if (ecoResProductSystemLanguage_)
+        {
+            return ecoResProductSystemLanguage_;
+        }
+        
+        return ecoResProductSystemLanguage_;
+    }
+    private EcoResProductTranslation LookForUniqueKeyMatch_DS5(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, EcoResProductTranslation _ecoResProductTranslationToSystemLanguage)
+    {
+        EcoResProductTranslation ecoResProductTranslation_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        ecoResProductTranslation_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                Product, LanguageId, RecId
+            from
+                ecoResProductTranslation_
+        where
+            ecoResProductTranslation_.Product == _ecoResProductTranslationToSystemLanguage.Product && ecoResProductTranslation_.LanguageId == _ecoResProductTranslationToSystemLanguage.LanguageId
+        ;
+        
+        if (ecoResProductTranslation_)
+        {
+            return ecoResProductTranslation_;
+        }
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                Product, LanguageId, RecId
+            from
+                ecoResProductTranslation_
+        where
+            ecoResProductTranslation_.RecId == _ecoResProductTranslationToSystemLanguage.RecId && ecoResProductTranslation_.Product == _ecoResProductTranslationToSystemLanguage.Product && ecoResProductTranslation_.LanguageId == _ecoResProductTranslationToSystemLanguage.LanguageId
+        ;
+        
+        if (ecoResProductTranslation_)
+        {
+            return ecoResProductTranslation_;
+        }
+        
+        return ecoResProductTranslation_;
+    }
+    private InventTableModule LookForUniqueKeyMatch_DS6(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventTableModule _inventTableModuleSales)
+    {
+        InventTableModule inventTableModule_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventTableModule_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                ItemId, ModuleType
+            from
+                inventTableModule_
+        where
+            inventTableModule_.ItemId == _inventTableModuleSales.ItemId && inventTableModule_.ModuleType == _inventTableModuleSales.ModuleType
+        ;
+        
+        if (inventTableModule_)
+        {
+            return inventTableModule_;
+        }
+        
+        return inventTableModule_;
+    }
+    private UnitOfMeasure LookForUniqueKeyMatch_DS7(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, UnitOfMeasure _unitOfMeasure)
+    {
+        UnitOfMeasure unitOfMeasure_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        unitOfMeasure_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                Symbol, DecimalPrecision
+            from
+                unitOfMeasure_
+        where
+            unitOfMeasure_.Symbol == _unitOfMeasure.Symbol
+        ;
+        
+        if (unitOfMeasure_)
+        {
+            return unitOfMeasure_;
+        }
+        
+        return unitOfMeasure_;
+    }
+    private InventTableModule LookForUniqueKeyMatch_DS8(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, InventTableModule _inventTableModuleInvent)
+    {
+        InventTableModule inventTableModule_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        inventTableModule_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                ItemId, ModuleType
+            from
+                inventTableModule_
+        where
+            inventTableModule_.ItemId == _inventTableModuleInvent.ItemId && inventTableModule_.ModuleType == _inventTableModuleInvent.ModuleType
+        ;
+        
+        if (inventTableModule_)
+        {
+            return inventTableModule_;
+        }
+        
+        return inventTableModule_;
+    }
+    private UnitOfMeasure LookForUniqueKeyMatch_DS9(EcoResReleasedDistinctProductCDSEntity _ecoResReleasedDistinctProductCDSEntity, UnitOfMeasure _unitOfMeasureInvent)
+    {
+        UnitOfMeasure unitOfMeasure_ = null;
+        
+        // Ensuring only fields in the selection list should be accessed for read-only data source.
+        unitOfMeasure_.checkInvalidFieldAccess(true);
+        
+        select
+            firstOnly
+                // Specify explicit field selection for read-only data source.
+                DecimalPrecision, Symbol
+            from
+                unitOfMeasure_
+        where
+            unitOfMeasure_.Symbol == _unitOfMeasureInvent.Symbol
+        ;
+        
+        if (unitOfMeasure_)
+        {
+            return unitOfMeasure_;
+        }
+        
+        return unitOfMeasure_;
+    }
+    private boolean isAnyFieldSet_DS6(InventTableModule _inventTableModuleSales, DataEntityDataSourceRuntimeContext _dataSourceCtx, DataEntityRuntimeContext _entityCtx)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyFieldSet_Extensions(_entityCtx, _dataSourceCtx, _inventTableModuleSales) ? true : false;
+        return rtrn;
+    }
+    private boolean isAnyFieldSet_DS8(InventTableModule _inventTableModuleInvent, DataEntityDataSourceRuntimeContext _dataSourceCtx, DataEntityRuntimeContext _entityCtx)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyFieldSet_Extensions(_entityCtx, _dataSourceCtx, _inventTableModuleInvent) ? true : false;
+        return rtrn;
+    }
+    private boolean isAnyFieldSet_DS17(InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemCostPriceCurrentActivePerVariant, DataEntityDataSourceRuntimeContext _dataSourceCtx, DataEntityRuntimeContext _entityCtx)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyFieldSet_Extensions(_entityCtx, _dataSourceCtx, _inventDistinctItemCostPriceCurrentActivePerVariant) ? true : false;
+        return rtrn;
+    }
+    private boolean isAnyFieldSet_DS18(InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemCostPriceCurrentActivePerMaster, DataEntityDataSourceRuntimeContext _dataSourceCtx, DataEntityRuntimeContext _entityCtx)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyFieldSet_Extensions(_entityCtx, _dataSourceCtx, _inventDistinctItemCostPriceCurrentActivePerMaster) ? true : false;
+        return rtrn;
+    }
+    private boolean isAnyFieldSet_DS19(InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemSalesPriceCurrentActivePerVariant, DataEntityDataSourceRuntimeContext _dataSourceCtx, DataEntityRuntimeContext _entityCtx)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyFieldSet_Extensions(_entityCtx, _dataSourceCtx, _inventDistinctItemSalesPriceCurrentActivePerVariant) ? true : false;
+        return rtrn;
+    }
+    private boolean isAnyFieldSet_DS20(InventDistinctItemPriceCurrentActivePerSite _inventDistinctItemSalesPriceCurrentActivePerMaster, DataEntityDataSourceRuntimeContext _dataSourceCtx, DataEntityRuntimeContext _entityCtx)
+    {
+        boolean rtrn = false;
+        rtrn = this.isAnyFieldSet_Extensions(_entityCtx, _dataSourceCtx, _inventDistinctItemSalesPriceCurrentActivePerMaster) ? true : false;
+        return rtrn;
+    }
+
+}
+

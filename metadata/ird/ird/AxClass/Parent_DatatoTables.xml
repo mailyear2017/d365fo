@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Parent_DatatoTables</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class Parent_DatatoTables
+{
+
+    Args    _arg=new Args();
+    
+   
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args _arg)
+    {
+       // PopulateDataToTables::main(_arg);
+       Array  fname = new Array(Types::String);
+       fname.value(1, "John");
+       fname.value(2, "Tom");
+       //int arraylength 
+       // _arg.parmObject(fname);
+       //for(int i=1; i<= fname.lastIndex() ;i++)
+      // {
+          // _arg.parm(fname.value(i));
+       //   _arg.parmObject(fname);
+      // }
+
+        //_arg.parm("john");
+        //_arg.parm("tom");
+        //_arg.parm("tall");
+        
+        Students s = new Students();
+        s.parmName();
+        s.parmAge();
+        _arg.parmObject(s);
+
+        Demo_ArgClass::main(_arg);
+        
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33927.289
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_ExportDataToFile_01 (USR) [ird]", "Ird_ExportDataToFile_01\Ird_ExportDataToFile_01.rnrproj", "{9DC48123-85DB-458C-BE6E-2B787C86AA9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DC48123-85DB-458C-BE6E-2B787C86AA9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC48123-85DB-458C-BE6E-2B787C86AA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E73DCAA4-01E8-459E-87B8-B63FB2FE32CA}
+	EndGlobalSection
+EndGlobal

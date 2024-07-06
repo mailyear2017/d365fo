@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FC65038C-1B2F-41E1-A629-BED71D161FFF}") = "Ird_FormExecuteQuery_01 (USR) [ird]", "Ird_FormExecuteQuery_01\Ird_FormExecuteQuery_01.rnrproj", "{D5E64649-B346-40E0-8E02-CF8A8B20F979}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5E64649-B346-40E0-8E02-CF8A8B20F979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E64649-B346-40E0-8E02-CF8A8B20F979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C58D006-0170-4987-BDBA-6B69122D6178}
+	EndGlobalSection
+EndGlobal

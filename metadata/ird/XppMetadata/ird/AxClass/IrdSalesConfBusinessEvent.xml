@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<z:anyType xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxCompilerMetadata" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+	<Extends>BusinessEventsBase</Extends>
+	<IsFinal>true</IsFinal>
+	<IsPublic>true</IsPublic>
+	<Attributes>
+		<AxAttribute>
+			<Name>BusinessEvents</Name>
+			<Parameters>
+				<AxAttributeParameter>
+					<Type>Intrinsic</Type>
+					<TypeValue>classStr</TypeValue>
+					<AdditionalData>
+						<AxAttributeParameter>
+							<TypeValue>IrdSalesConfBusEventContract</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<AdditionalData />
+						</AxAttributeParameter>
+						<AxAttributeParameter>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</AdditionalData>
+				</AxAttributeParameter>
+				<AxAttributeParameter>
+					<TypeValue>"SalesconfPost"</TypeValue>
+					<AdditionalData />
+				</AxAttributeParameter>
+				<AxAttributeParameter>
+					<TypeValue>"Sales confirmation posting event"</TypeValue>
+					<AdditionalData />
+				</AxAttributeParameter>
+				<AxAttributeParameter>
+					<Type>Enum</Type>
+					<TypeValue>ModuleAxapta</TypeValue>
+					<AdditionalData>
+						<AxAttributeParameter>
+							<TypeValue>SalesOrder</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</AdditionalData>
+				</AxAttributeParameter>
+			</Parameters>
+		</AxAttribute>
+	</Attributes>
+	<Members>
+		<AxClassMemberVariable>
+			<Tags></Tags>
+			<Type>Record</Type>
+			<TypeName>SalesTable</TypeName>
+			<Name>salesTable</Name>
+			<Attributes />
+			<Visibility>Private</Visibility>
+		</AxClassMemberVariable>
+	</Members>
+	<Methods>
+		<Method>
+			<Name>parmSalestable</Name>
+			<Parameters>
+				<AxMethodParameter>
+					<Tags></Tags>
+					<Type>Record</Type>
+					<TypeName>SalesTable</TypeName>
+					<Name>_salesTable</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Tags></Tags>
+				<Type>Record</Type>
+				<TypeName>SalesTable</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>newFromSalestable</Name>
+			<IsStatic>true</IsStatic>
+			<Visibility>Public</Visibility>
+			<Parameters>
+				<AxMethodParameter>
+					<Tags></Tags>
+					<Type>Record</Type>
+					<TypeName>SalesTable</TypeName>
+					<Name>_salesTable</Name>
+				</AxMethodParameter>
+			</Parameters>
+			<ReturnType>
+				<Tags></Tags>
+				<Type>Class</Type>
+				<TypeName>IrdSalesConfBusinessevent</TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>new</Name>
+			<ReturnType>
+				<Tags></Tags>
+				<TypeName></TypeName>
+			</ReturnType>
+		</Method>
+		<Method>
+			<Name>buildContract</Name>
+			<Visibility>Public</Visibility>
+			<Attributes>
+				<AxAttribute>
+					<Name>Wrappable</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<Type>Boolean</Type>
+							<TypeValue>True</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+				<AxAttribute>
+					<Name>Hookable</Name>
+					<Parameters>
+						<AxAttributeParameter>
+							<Type>Boolean</Type>
+							<TypeValue>True</TypeValue>
+							<AdditionalData />
+						</AxAttributeParameter>
+					</Parameters>
+				</AxAttribute>
+			</Attributes>
+			<ReturnType>
+				<Tags></Tags>
+				<Type>Class</Type>
+				<TypeName>BusinessEventsContract</TypeName>
+			</ReturnType>
+		</Method>
+	</Methods>
+</z:anyType>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdCustDataResponse</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[DataContractAttribute]
+public final class IrdCustDataResponse
+{
+    private AccountName accountname;
+    private boolean success;
+    private str errormessage;
+    private Amount  openbal;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>parmAccountName</Name>
+				<Source><![CDATA[
+    [DataMember]
+    public  AccountName parmAccountName(AccountName _value=accountname)
+    {
+        accountname=_value;
+
+        return  accountname;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>parmSuccess</Name>
+				<Source><![CDATA[
+    [DataMember]
+    public  boolean parmSuccess(boolean _value=success)
+    {
+        if(!prmIsDefault(_value))
+        {
+            success=_value;
+
+        }
+        return  success;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>parmErrorMessage</Name>
+				<Source><![CDATA[
+    [DataMember]
+    public  str parmErrorMessage(str _value=errormessage)
+    {
+        if(!prmIsDefault(_value))
+        {
+            errormessage=_value;
+        }
+
+        return errormessage;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>parmCustOpenBal</Name>
+				<Source><![CDATA[
+    [DataMember]
+    public Amount   parmCustOpenBal(Amount _value=openbal)
+    {
+            if(!prmIsDefault(_value))
+            {
+                openbal = _value;
+            }
+
+            return openbal;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

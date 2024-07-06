@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>SpeakerDP</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[SrsReportQueryAttribute('SpeakerQuery')
+,SRSReportparameterAttribute(classStr(SpeakerDataContract))
+    ]
+public class SpeakerDP extends SRSReportDataProviderBase
+{
+    TmpSpeakerTable     tmpSpeakerTable;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>getTmpSpeakerTable</Name>
+				<Source><![CDATA[
+        [SrsReportDataSetAttribute('tmpSpeakerTable')]
+    public TmpSpeakerTable getTmpSpeakerTable()
+    {
+        select * from tmpSpeakerTable;
+        return tmpSpeakerTable;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>processReport</Name>
+				<Source><![CDATA[
+    /// <summary>
+    ///this is the method to provide data for the report
+    /// </summary>
+    public void processReport()
+    {
+        super();
+        Query                   query;
+        QueryRun                qr;
+        QueryBuildDataSource    qbds;
+        QueryBuildRange         qbr;
+        SpeakerStatus           spkrstatus;
+        SpeakerDataContract     dataContract;
+        ird_speaker             queryspeakertbl;
+        query=this.parmQuery();
+
+        dataContract=this.parmDataContract();
+        spkrstatus=dataContract.parmSpeakerStatus();
+
+        qbds=query.dataSourceTable(tableNum(ird_speaker));
+
+       // if(spkrstatus)
+        {
+            qbr=qbds.findRange(fieldNum(ird_speaker,SpeakerStatus));
+            if(!qbr)
+            {
+                qbr=qbds.addRange(fieldNum(ird_speaker,SpeakerStatus));
+
+                if(!qbr.value())
+                {
+                    qbr.value(enum2Str(spkrstatus));
+                }
+            }
+
+            qr  =   new QueryRun(query);
+
+            ttsbegin;
+            while(qr.next())
+            {
+                tmpSpeakerTable.clear();
+                queryspeakertbl=qr.get(tableNum(ird_speaker));
+                tmpSpeakerTable.FirstName=queryspeakertbl.FirstName;
+                tmpSpeakerTable.LastName=queryspeakertbl.LastName;
+                tmpSpeakerTable.Email=queryspeakertbl.Email;
+                tmpSpeakerTable.SpeakerSpecialization=queryspeakertbl.SpeakerSpecialization;
+                tmpSpeakerTable.insert();
+
+                
+            }
+            ttscommit;
+
+
+
+        }
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

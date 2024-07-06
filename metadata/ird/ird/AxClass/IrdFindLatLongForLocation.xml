@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdFindLatLongForLocation</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class IrdFindLatLongForLocation
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Class entry point. The system will call this method when a designated menu 
+    /// is selected or when execution starts and this class is set as the startup class.
+    /// </summary>
+    /// <param name = "_args">The specified arguments.</param>
+    public static void main(Args _args)
+    {
+        EntAssetObjectTable         entAssetObjectTable;
+        EntAssetFunctionalLocation  floc ;
+        EntAssetFunctionalLocation  parentfloc;
+        EntAssetObjectID            _asset='BLN-402';
+        //int                         _lloc=0;
+        RecId                       _floc,_ploc,_lloc;
+        boolean                     isnotfound=true;
+        CreatedBy                   _createdby='';
+
+        
+        
+        IrdFindLatLongForLocation   c   = new IrdFindLatLongForLocation();
+        //get the assets functional location. checck if the floc has address. 
+        //If not get the parent floc recursivley until reach the top level.
+        entAssetObjectTable=EntAssetObjectTable::find(_asset);
+       // _createdby=entAssetObjectTable.CreatedBy;
+       
+        //get the physical location of the asset
+
+        _lloc=entAssetObjectTable.LogisticsLocation;
+
+        if(_lloc!=0)
+        {
+            isnotfound=false;
+        }
+        else
+        {
+            //get the assets functional location id
+            _floc=entAssetObjectTable.FunctionalLocation;
+                    
+
+            while (isnotfound)
+            {
+                
+                //get the floc buffer based on floc recid
+                floc=EntAssetFunctionalLocation::findRecID(_floc);
+
+                //get the physical location of the functional location
+                _lloc=floc.LogisticsLocation;
+
+                //get the parent floc of the floc
+                _ploc=floc.ParentFunctionalLocation;
+
+                if(_lloc==0)
+                {
+                    parentfloc=EntAssetFunctionalLocation::findRecID(_ploc);
+                    
+                    //get the parent flocs physical location
+                    _lloc=parentfloc.LogisticsLocation;
+
+                    if(_lloc==0)
+                    {
+                        _floc=_ploc;
+                    }
+                    else
+                    {
+                        isnotfound=false;
+                        
+                        Info(c.GetAddress(_lloc) + "---"+ parentfloc.Name);
+                        
+                    }
+                }
+                else
+                {
+                    isnotfound=false;
+                    Info(c.GetAddress(_lloc) + "---"+ floc.Name);
+                }
+            }
+        }
+
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>GetAddress</Name>
+				<Source><![CDATA[
+    public  str GetAddress(RecId  _logisticslocation)
+    {
+        
+        LogisticsLocation           location;
+        LogisticsPostalAddress      postalAddress;
+        
+
+        select location where location.RecId ==_logisticslocation 
+            join postalAddress where postalAddress.Location==location.RecId; 
+
+       
+        return postalAddress.Address;
+
+
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

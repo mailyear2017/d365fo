@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Diagnostics
+  GenerationTime="2024-06-03T09:51:54.4300599+10:00">
+  <Items>
+    <Diagnostic>
+      <DiagnosticType>Metadata</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>AxForm/Specializations_form/DataSourceQuery</Path>
+      <Moniker>QueryDoesNotExist</Moniker>
+      <Message>Query 'ird_speceaclizationformquery' does not exist.</Message>
+    </Diagnostic>
+  </Items>
+  <Aliases />
+</Diagnostics>

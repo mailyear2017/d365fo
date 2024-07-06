@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdCopyDataFromField</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class IrdCopyDataFromField
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Class entry point. The system will call this method when a designated menu 
+    /// is selected or when execution starts and this class is set as the startup class.
+    /// </summary>
+    /// <param name = "_args">The specified arguments.</param>
+    public static void main(Args _args)
+    {
+        ird_speaker     speakertab;
+        int             rec=0;
+        ttsbegin;
+        try
+        {
+            while select forupdate speakertab where speakertab.AllocatedHours>0
+            {
+                //speakertab.ActualHours=speakertab.AllocatedHours;
+                speakertab.ActualHours=speakertab.AllocatedHours;
+                speakertab.update();
+                rec+=1;
+            }
+            ttscommit;
+            info("Records updated:"+ int2Str(rec));
+        }
+        catch
+        {
+            info("Error in update");
+            ttsabort;
+        }
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

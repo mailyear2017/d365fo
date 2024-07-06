@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>DocuRef_C_Extension</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[ExtensionOf(tableStr(DocuRef))]
+/// <summary>
+/// 
+/// Extending initvalue method to default the document type 
+/// </summary>
+
+internal final class DocuRef_C_Extension
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>initValue</Name>
+				<Source><![CDATA[
+    public  void    initValue()
+    {
+        DocuType    docuType;
+        
+
+        next    initValue();
+
+        Info("comp:" +curExt());
+
+        select  firstonly   docuType
+            where docuType.TypeId==this.TypeId && docuType.DataAreaId==curExt();
+
+        Info("TyoeId:"+this.TypeId);
+        //this.Restriction= DocuRestriction::External;
+            //docuType.DocuRestriction;
+
+
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

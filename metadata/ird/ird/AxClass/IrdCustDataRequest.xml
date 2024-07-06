@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>IrdCustDataRequest</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[DataContractAttribute]
+public final class IrdCustDataRequest
+{
+    private AccountNum  accountnum;
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>parmCustAccountNum</Name>
+				<Source><![CDATA[
+    [DataMember]
+    public  AccountNum parmCustAccountNum(AccountNum _value=accountnum)
+    {
+        accountnum=_value;
+
+        return accountnum;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

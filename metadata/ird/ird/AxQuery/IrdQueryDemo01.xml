@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxQuery xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+	i:type="AxQuerySimple">
+	<Name>IrdQueryDemo01</Name>
+	<SourceCode>
+		<Methods>
+			<Method>
+				<Name>classDeclaration</Name>
+				<Source><![CDATA[
+[Query]
+public class IrdQueryDemo01 extends QueryRun
+{
+}
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+	<DataSources>
+		<AxQuerySimpleRootDataSource>
+			<Name>CustTable</Name>
+			<DynamicFields>Yes</DynamicFields>
+			<Table>CustTable</Table>
+			<DataSources>
+				<AxQuerySimpleEmbeddedDataSource>
+					<Name>CustTrans</Name>
+					<Table>CustTrans</Table>
+					<DataSources />
+					<DerivedDataSources />
+					<Fields>
+						<AxQuerySimpleDataSourceField>
+							<Name>Voucher</Name>
+							<Field>Voucher</Field>
+						</AxQuerySimpleDataSourceField>
+					</Fields>
+					<Ranges />
+					<Relations>
+						<AxQuerySimpleDataSourceRelation>
+							<Name>QueryDataSourceRelation1</Name>
+							<Field>AccountNum</Field>
+							<JoinDataSource>CustTable</JoinDataSource>
+							<RelatedField>AccountNum</RelatedField>
+						</AxQuerySimpleDataSourceRelation>
+						<AxQuerySimpleDataSourceRelation>
+							<Name>QueryDataSourceRelation2</Name>
+							<Field>DataAreaId</Field>
+							<JoinDataSource>CustTable</JoinDataSource>
+							<RelatedField>DataAreaId</RelatedField>
+						</AxQuerySimpleDataSourceRelation>
+					</Relations>
+				</AxQuerySimpleEmbeddedDataSource>
+			</DataSources>
+			<DerivedDataSources />
+			<Fields />
+			<Ranges>
+				<AxQuerySimpleDataSourceRange>
+					<Name>QR1</Name>
+					<Field>AccountNum</Field>
+					<Value>D*</Value>
+				</AxQuerySimpleDataSourceRange>
+			</Ranges>
+			<GroupBy />
+			<Having />
+			<OrderBy>
+				<AxQuerySimpleOrderByField>
+					<Name>QueryOrderByField1</Name>
+					<DataSource>CustTable</DataSource>
+					<Field>AccountNum</Field>
+				</AxQuerySimpleOrderByField>
+			</OrderBy>
+		</AxQuerySimpleRootDataSource>
+	</DataSources>
+</AxQuery>

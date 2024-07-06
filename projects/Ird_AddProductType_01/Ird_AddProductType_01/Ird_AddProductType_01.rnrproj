@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>ird</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{6194c66c-ebe7-4b3f-aa92-5fe804b97d20}</ProjectGuid>
+    <Name>Ird_AddProductType_01</Name>
+    <RootNamespace>Ird_AddProductType_01</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Base Enums\" />
+    <Folder Include="Display Menu Items\" />
+    <Folder Include="Form Extensions\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Menus\" />
+    <Folder Include="Table Extensions\" />
+    <Folder Include="Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxEnum\IrdPurchRequestType">
+      <SubType>Content</SubType>
+      <Name>IrdPurchRequestType</Name>
+      <Link>Base Enums\IrdPurchRequestType</Link>
+    </Content>
+    <Content Include="AxFormExtension\EcoResProductDetailsExtended.ird_ext">
+      <SubType>Content</SubType>
+      <Name>EcoResProductDetailsExtended.ird_ext</Name>
+      <Link>Form Extensions\EcoResProductDetailsExtended.ird_ext</Link>
+    </Content>
+    <Content Include="AxForm\IrdPurchRequestTypeForm">
+      <SubType>Content</SubType>
+      <Name>IrdPurchRequestTypeForm</Name>
+      <Link>Forms\IrdPurchRequestTypeForm</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\IrdPurchTypeMI">
+      <SubType>Content</SubType>
+      <Name>IrdPurchTypeMI</Name>
+      <Link>Display Menu Items\IrdPurchTypeMI</Link>
+    </Content>
+    <Content Include="AxMenu\Conferences">
+      <SubType>Content</SubType>
+      <Name>Conferences</Name>
+      <Link>Menus\Conferences</Link>
+    </Content>
+    <Content Include="AxTableExtension\InventTable.ird_ext">
+      <SubType>Content</SubType>
+      <Name>InventTable.ird_ext</Name>
+      <Link>Table Extensions\InventTable.ird_ext</Link>
+    </Content>
+    <Content Include="AxTable\IrdPurchTypeTable">
+      <SubType>Content</SubType>
+      <Name>IrdPurchTypeTable</Name>
+      <Link>Tables\IrdPurchTypeTable</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>

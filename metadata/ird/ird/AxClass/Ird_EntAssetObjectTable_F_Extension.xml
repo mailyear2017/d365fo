@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Ird_EntAssetObjectTable_F_Extension</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[ExtensionOf(formstr(EntAssetObjectTable))]
+public final class Ird_EntAssetObjectTable_F_Extension
+{
+    /*public  void init()
+    {
+        next    init();
+
+        FormStringControl   fsc = this.design().controlName(formControlStr(EntAssetObjectTable,ObjectTable_Ird_structureCode));
+        fsc.registerOverrideMethod(methodStr(FormDataObject, lookup),formMethodStr(EntAssetObjectTable,overridenAssetStructureLookUp));
+
+    
+    }*/
+
+    /*public void overridenAssetStructureLookUp(FormStringControl _formStringControl)
+    {
+        FormRun fr = this as FormRun;
+        FormDataSource  fds = fr.dataSource(formDataSourceStr(EntAssetObjectTable,ObjectTable));
+        EntAssetObjectTable entassetObjectTable = fds.cursor();
+        //entAssetObjectTable.ModelYear= int2Str(year(today()));
+        SysTableLookup  sysTableLookUp = SysTableLookup::newParameters(tableNum(Ird_AssetStructure),_formStringControl);
+        Query   query   =new    Query();
+        QueryBuildDataSource qbds = query.addDataSource(tableNum(Ird_AssetStructure));
+        QueryBuildRange range = qbds.addRange(fieldNum(Ird_AssetStructure,Ird_structureCode));
+        //range.value("Basement");
+        range.value(EntAssetObjectType::find(entassetObjectTable.ObjectType).Ird_structureCode);
+        sysTableLookUp.addLookupfield(fieldNum(Ird_AssetStructure,Ird_structureCode));
+        sysTableLookUp.parmQuery(query);
+        sysTableLookUp.performFormLookup();
+    }*/
+    
+}
+]]></Declaration>
+		<Methods />
+	</SourceCode>
+</AxClass>
