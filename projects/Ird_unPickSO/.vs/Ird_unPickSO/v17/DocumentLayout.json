@@ -1,0 +1,35 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\repos\\d365fo\\projects\\Ird_unPickSO\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7E82811A-9BCE-4F87-ACA0-3C387BF7AAA0}|Ird_unPickSO.rnrproj|C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxTable\\Ird_BookingOrigin.xml||{7DCB09FF-3066-475F-9286-662C3C505513}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ird_BookingOrigin",
+              "DocumentMoniker": "C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxTable\\Ird_BookingOrigin.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxTable\\Ird_BookingOrigin.xml",
+              "ToolTip": "C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxTable\\Ird_BookingOrigin.xml\r\nType: Table\r\nModel: ird",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "OverriddenToolTip": "C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxTable\\Ird_BookingOrigin.xml\r\nType: Table\r\nModel: ird",
+              "WhenOpened": "2024-07-14T00:01:36.598Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

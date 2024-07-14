@@ -11,11 +11,11 @@
   <ExtensionClass Name="DocuRef_C_Extension" ExtensionTarget="DocuRef" ExtensionTargetType="TableTypeId">
     <Method ActualExtensionTarget="DocuRef" IsStatic="False" CocMethodDelegateElementOwner="DocuRef" IsFormNestedTargetConcept="False" CoCRootFormName="" CoCNestedElementKind="Class" IsCommonBaseMethodTarget="False" SupportsLazyInit="False">initValue</Method>
   </ExtensionClass>
-  <ExtensionClass Name="IrdSalesConfirmJournalPost_Extension" ExtensionTarget="SalesConfirmJournalPost" ExtensionTargetType="ClassTypeId">
-    <Method ActualExtensionTarget="SalesConfirmJournalPost" IsStatic="False" CocMethodDelegateElementOwner="FormletterJournalPost" IsFormNestedTargetConcept="False" CoCRootFormName="" CoCNestedElementKind="Class" IsCommonBaseMethodTarget="False" SupportsLazyInit="False">$augmentedProxy$endPost</Method>
-  </ExtensionClass>
   <ExtensionClass Name="IrdHCMGoal_Extension" ExtensionTarget="HcmGoal" ExtensionTargetType="ClassTypeId">
     <Method ActualExtensionTarget="HcmGoal" IsStatic="False" CocMethodDelegateElementOwner="FormDataSource" IsFormNestedTargetConcept="True" CoCRootFormName="HcmGoal" CoCNestedElementKind="FormDataSource" IsCommonBaseMethodTarget="False" SupportsLazyInit="False">GoalDisplay</Method>
+  </ExtensionClass>
+  <ExtensionClass Name="IrdSalesConfirmJournalPost_Extension" ExtensionTarget="SalesConfirmJournalPost" ExtensionTargetType="ClassTypeId">
+    <Method ActualExtensionTarget="SalesConfirmJournalPost" IsStatic="False" CocMethodDelegateElementOwner="FormletterJournalPost" IsFormNestedTargetConcept="False" CoCRootFormName="" CoCNestedElementKind="Class" IsCommonBaseMethodTarget="False" SupportsLazyInit="False">$augmentedProxy$endPost</Method>
   </ExtensionClass>
   <ExtensionClass Name="CustTable_Ird_Extension" ExtensionTarget="CustTable" ExtensionTargetType="TableTypeId">
     <Method ActualExtensionTarget="CustTable" IsStatic="False" CocMethodDelegateElementOwner="CustTable" IsFormNestedTargetConcept="False" CoCRootFormName="" CoCNestedElementKind="Class" IsCommonBaseMethodTarget="False" SupportsLazyInit="False">modifiedField</Method>
