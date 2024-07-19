@@ -33,11 +33,41 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="AxForm\IrdBookingOrigin">
+      <SubType>Content</SubType>
+      <Name>IrdBookingOrigin</Name>
+      <Link>IrdBookingOrigin</Link>
+    </Content>
+    <Content Include="AxLabelFile\ird_labels_en-US">
+      <SubType>Content</SubType>
+      <Name>ird_labels_en-US</Name>
+      <Link>Label Files\ird_labels_en-US</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\IrdBookingOrigin">
+      <SubType>Content</SubType>
+      <Name>IrdBookingOrigin</Name>
+      <Link>Display Menu Items\IrdBookingOrigin</Link>
+    </Content>
+    <Content Include="AxMenu\Conferences">
+      <SubType>Content</SubType>
+      <Name>Conferences</Name>
+      <Link>Menus\Conferences</Link>
+    </Content>
     <Content Include="AxTable\Ird_BookingOrigin">
       <SubType>Content</SubType>
       <Name>Ird_BookingOrigin</Name>
       <Link>Ird_BookingOrigin</Link>
     </Content>
+    <Content Include="ird_labels.en-US.label.txt">
+      <SubType>Content</SubType>
+      <Name>ird_labels.en-US.label.txt</Name>
+      <DependentUpon>AxLabelFile\ird_labels_en-US</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Display Menu Items\" />
+    <Folder Include="Label Files\" />
+    <Folder Include="Menus\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
   <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.17.0.targets" />

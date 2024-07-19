@@ -3,6 +3,12 @@
   "WorkspaceRootPath": "C:\\repos\\d365fo\\projects\\Ird_unPickSO\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7E82811A-9BCE-4F87-ACA0-3C387BF7AAA0}|Ird_unPickSO.rnrproj|C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxMenu\\Conferences.xml||{7DCB09FF-3066-475F-9286-662C3C505513}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E82811A-9BCE-4F87-ACA0-3C387BF7AAA0}|Ird_unPickSO.rnrproj|C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxForm\\IrdBookingOrigin.xml||{7DCB09FF-3066-475F-9286-662C3C505513}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7E82811A-9BCE-4F87-ACA0-3C387BF7AAA0}|Ird_unPickSO.rnrproj|C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxTable\\Ird_BookingOrigin.xml||{7DCB09FF-3066-475F-9286-662C3C505513}|"
     }
   ],
@@ -13,11 +19,39 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Conferences",
+              "DocumentMoniker": "C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxMenu\\Conferences.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxMenu\\Conferences.xml",
+              "ToolTip": "C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxMenu\\Conferences.xml\r\nType: Menu\r\nModel: ird",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "OverriddenToolTip": "C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxMenu\\Conferences.xml\r\nType: Menu\r\nModel: ird",
+              "WhenOpened": "2024-07-19T22:53:45.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IrdBookingOrigin",
+              "DocumentMoniker": "C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxForm\\IrdBookingOrigin.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxForm\\IrdBookingOrigin.xml",
+              "ToolTip": "C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxForm\\IrdBookingOrigin.xml\r\nType: Form\r\nModel: ird",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "OverriddenToolTip": "C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxForm\\IrdBookingOrigin.xml\r\nType: Form\r\nModel: ird",
+              "WhenOpened": "2024-07-19T22:41:16.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Ird_BookingOrigin",
               "DocumentMoniker": "C:\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxTable\\Ird_BookingOrigin.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\AOSService\\PackagesLocalDirectory\\ird\\ird\\AxTable\\Ird_BookingOrigin.xml",

@@ -99,6 +99,11 @@
 					<Name>Ird_AssetStructure</Name>
 					<MenuItemName>Ird_AssetStructure</MenuItemName>
 				</AxMenuElement>
+				<AxMenuElement xmlns=""
+					i:type="AxMenuElementMenuItem">
+					<Name>IrdBookingOrigin</Name>
+					<MenuItemName>IrdBookingOrigin</MenuItemName>
+				</AxMenuElement>
 			</Elements>
 		</AxMenuElement>
 	</Elements>

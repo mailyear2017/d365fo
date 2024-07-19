@@ -45,6 +45,8 @@ Ird18=Speaker report temp table
  ;Speaker report temp table
 Ird19=Speaker Listing RDP
  ;Speaker Listing RDP
+Ird21=Booking Origin
+ ;Booking Origin
 IrdCustSOTable=Customer Sales Order Table
  ;Customer Sales Order Table
 IrdPurchTable=Simple Purchase Requisition
